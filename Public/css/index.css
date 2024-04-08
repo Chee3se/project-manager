@@ -1,0 +1,79 @@
+/* Basic shit */
+
+@font-face {
+    font-family: Poppins;
+    src: url(/fonts/Poppins-Regular.ttf);
+}
+
+:root {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    --darkGray: #202020;
+    --white: #ffffff;
+    --gray: #464646;
+    --green: seagreen;
+    --lightGreen: #04AA6D;
+    --red: #f44336;
+    --blue: #008CBA;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    margin: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navigation bar */
+
+nav {
+    height: 40px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Nav div (placeholder) */
+
+nav>div {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    background-color: var(--gray);
+}
+
+nav>a {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--gray);
+    text-align: center;
+    transition: all .5s;
+}
+
+nav>a:hover {
+    background-color: var(--darkGray);
+}
+
+nav>a.active {
+    background-color: var(--green);
+}
+
+nav>a.active:hover {
+    background-color: var(--green);
+}
