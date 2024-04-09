@@ -2,35 +2,20 @@
 
 namespace Models;
 
-class User extends Database
+class User extends Model
 {
-    public function __construct($config)
-    {
-        parent::__construct($config);
+    static $table = 'users';
+
+    protected array $fillable = ['username', 'email', 'password'];
+
+    public function login() {
+        $_SESSION['user'] = $this->username;
     }
 
-    public function all()
-    {
-        return $this->query("SELECT * FROM users")->fetchAll();
-    }
-
-    public function find($id)
-    {
-        return $this->query("SELECT * FROM users WHERE id = :id", ['id' => $id])->fetch();
-    }
-
-    public function create($data)
-    {
-        return $this->insert("users", $data);
-    }
-
-    public function update($id, $data)
-    {
-        return $this->update("users", $id, $data);
-    }
-
-    public function delete($id)
-    {
-        return $this->delete("users", $id);
+    public function logout() {
+        unset($_SESSION['user']);
+        session_destroy();
+        $params = session_get_cookie_params();
+        setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Core\Middleware\Middleware;
+
 class Router
 {
     protected $routes = [];
@@ -24,34 +26,45 @@ class Router
                 'method' => $controller[1],
                 'params' => $params
             ],
-            'method' => $method
+            'method' => $method,
+            'middleware' => null
         ];
+
+        return $this;
     }
 
     public function get($uri, $controller)
     {
-        $this->add($uri, $controller, 'GET');
+        return $this->add($uri, $controller, 'GET');
     }
 
     public function post($uri, $controller)
     {
-        $this->add($uri, $controller, 'POST');
+        return $this->add($uri, $controller, 'POST');
     }
 
     public function patch($uri, $controller)
     {
-        $this->add($uri, $controller, 'PATCH');
+        return $this->add($uri, $controller, 'PATCH');
     }
 
     public function delete($uri, $controller)
     {
-        $this->add($uri, $controller, 'DELETE');
+        return $this->add($uri, $controller, 'DELETE');
+    }
+
+    public function middleware($key)
+    {
+        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
     }
 
     public function route($uri, $request_method)
     {
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($request_method)) {
+                // Apply the middleware if it exists
+                Middleware::resolve($route['middleware']);
+
                 extract($route['controller']);
                 $class = new $class();
                 if (empty($params)) {
