@@ -9,6 +9,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     --darkGray: #202020;
+    --buttonBackgroundColor: #13111a;
     --white: #ffffff;
     --gray: #464646;
     --green: seagreen;
@@ -95,7 +96,7 @@ nav {
     border-radius: 30px;
     background-image: var(--yellowGradient);
     transition: all .5s;
-    margin: 0 3px;
+    margin: 0 4px;
 }
 
 .navbar-right:hover {
@@ -109,7 +110,7 @@ nav {
     border-radius: 30px;
     font-weight: 600;
     transition: all .5s;
-    background-color: var(--background);
+    background-color: var(--buttonBackgroundColor);
 }
 
 .navbar-right>a:hover {
