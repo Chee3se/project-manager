@@ -15,6 +15,11 @@
     --lightGreen: #04AA6D;
     --red: #f44336;
     --blue: #008CBA;
+    --background: #1d1a27;
+    --yellowGradient: linear-gradient(90deg, rgb(255, 246, 0) 0%, rgb(255, 186, 0) 30%, rgb(255, 246, 0) 70%, rgb(255, 186, 0) 100%);
+    --textColor: white;
+    --secondaryTextColor: #b7b4c7;
+    --hoverColor: orange;
 }
 
 body {
@@ -23,6 +28,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--background);
 }
 
 main {
@@ -36,53 +42,111 @@ main {
 /* Navigation bar */
 
 nav {
-    height: 40px;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin-bottom: 20px;
-    background-color: rgb(212, 235, 255);
-    gap: 20px;
+    width: 100%;
+    height: 60px;
+    padding: 40px 0;
 }
 
-/* Nav div (placeholder) */
-
-nav>a {
+.navbar-container {
+    max-width: 1000px;
+    padding: 0 20px;
+    margin: 0 auto;
     height: 100%;
-    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.navbar-container>div>a {
     font-size: 20px;
     text-decoration: none;
-    color: var(--gray);
-    text-align: center;
+    color: var(--textColor);
     transition: all .5s;
 }
 
-nav>a.active {
+.navbar-container>div {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left>p {
+    font-size: 20px;
     font-weight: 600;
-}
-/*
-nav>a.login {
-    justify-self: right;
-}
-
-nav>a:hover {
-    background-color: var(--darkGray);
-}
-
-nav>a.active:hover {
-    background-color: var(--green);
-}
-*/
-/* Other */
-
-.index-h1 {
-    /* Gradient */
-    font-size: 72px;
-    text-align: center;
-    background: -webkit-linear-gradient(180deg, rgba(191,138,0,1) 0%, rgba(200,191,0,1) 30%, rgba(191,138,0,1) 70%, rgba(200,191,0,1) 100%);
+    margin: 0 0 0 20px;
+    text-align: left;
+    background: var(--yellowGradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
 
+.navbar-center {
+    position: relative;
+    gap: 30px;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+.navbar-center>a:hover {
+    color: var(--hoverColor);
+}
+
+.navbar-right {
+    padding: 2px;
+    border-radius: 30px;
+    background-image: var(--yellowGradient);
+    transition: all .5s;
+    margin: 0 3px;
+}
+
+.navbar-right:hover {
+    padding: 3px;
+    transform-origin: center;
+    margin: 0;
+}
+
+.navbar-right>a {
+    padding: 13px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all .5s;
+    background-color: var(--background);
+}
+
+.navbar-right>a:hover {
+    font-size: 22px;
+    padding: 10px 35px;
+    transform-origin: center;
+}
+
+
+/* Other */
+
+.special-h1 {
+    margin-bottom: 10px;
+}
+
+.special-h1>span {
+    background: var(--yellowGradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.normal-h1 {
+    margin-top: 0;
+}
+
+/* Main elements */
+
+h1 {
+    font-size: 72px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+p {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--secondaryTextColor);
+    text-align: center;
 }

@@ -1,6 +1,15 @@
 <nav>
-    <a class=<?php if ($_SERVER['REQUEST_URI'] == "/") {echo "active";} else {echo "none";}?> href="/">Home</a>
-    <a class=<?php if ($_SERVER['REQUEST_URI'] == "/tasks") {echo "active";} else {echo "none";}?> href="/tasks">My Tasks</a>
-    <a class="login <?php if ($_SERVER['REQUEST_URI'] == "/login") {echo "active";} else {echo "none";}?>" href="/login">Login</a>
+    <div class="navbar-container">
+        <div class="navbar-left">
+            <p class="index-p">Project Manager</p>
+        </div>
+        <div class="navbar-center">
+            <a class="<?= $_SERVER['REQUEST_URI'] == '/' ? 'active' : '' ?>" href="/">Home</a>
+            <a class="<?= $_SERVER['REQUEST_URI'] == '/tasks' ? 'active' : '' ?>" href="/tasks">Tasks</a>
+        </div>
+        <div class="navbar-right">
+            <a class="<?= $_SERVER['REQUEST_URI'] == '/login' ? 'active' : '' ?>" href="/login">Login</a>
+        </div>
+    </div>
 </nav>
 <main>
