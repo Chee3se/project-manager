@@ -17,5 +17,3 @@ $container->bind('Models\Database', function () {
 });
 
 App::setContainer($container);
-
-dd(User::where('username', 'e'));

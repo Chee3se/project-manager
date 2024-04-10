@@ -6,13 +6,13 @@ use Core\App;
 
 abstract class Model
 {
-    static $connection;
+    static $connection = null;
     static $table;
     protected array $fillable = [];
 
     function __construct()
     {
-        static::$connection = App::resolve(Database::class);
+        static::$connection ?? static::$connection = App::resolve(Database::class);
         foreach ($this->fillable as $column) {
             $this->{$column} = '';
         }
@@ -20,7 +20,7 @@ abstract class Model
 
     public static function find($id): bool|Model
     {
-        static::$connection = App::resolve(Database::class);
+        static::$connection ?? static::$connection = App::resolve(Database::class);
         $db = static::$connection;
         $data = $db->query("SELECT * FROM ".static::$table." WHERE id = :id", compact('id'))->fetch();
 
@@ -36,7 +36,7 @@ abstract class Model
 
     public static function where($column, $value): bool|array
     {
-        static::$connection = App::resolve(Database::class);
+        static::$connection ?? static::$connection = App::resolve(Database::class);
         $db = static::$connection;
         $data = $db->query("SELECT * FROM ".static::$table." WHERE $column = :$column", [$column => $value])->fetchAll();
         if (!$data) { return false; }
@@ -45,7 +45,7 @@ abstract class Model
 
     public static function all(): bool|array
     {
-        static::$connection = App::resolve(Database::class);
+        static::$connection ?? static::$connection = App::resolve(Database::class);
         $db = static::$connection;
         $data = $db->query("SELECT * FROM ".static::$table, [])->fetchAll();
         if (!$data) { return false; }
