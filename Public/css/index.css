@@ -38,42 +38,51 @@ main {
 nav {
     height: 40px;
     width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: row;
     margin-bottom: 20px;
+    background-color: rgb(212, 235, 255);
+    gap: 20px;
 }
 
 /* Nav div (placeholder) */
 
-nav>div {
-    width: 100%;
-    height: 100%;
-    padding-top: 10px;
-    background-color: var(--gray);
-}
-
 nav>a {
-    width: 100%;
     height: 100%;
     padding-top: 10px;
     font-size: 20px;
     text-decoration: none;
-    color: var(--white);
-    background-color: var(--gray);
+    color: var(--gray);
     text-align: center;
     transition: all .5s;
+}
+
+nav>a.active {
+    font-weight: 600;
+}
+/*
+nav>a.login {
+    justify-self: right;
 }
 
 nav>a:hover {
     background-color: var(--darkGray);
 }
 
-nav>a.active {
-    background-color: var(--green);
-}
-
 nav>a.active:hover {
     background-color: var(--green);
+}
+*/
+/* Other */
+
+.index-h1 {
+    /* Gradient */
+    font-size: 72px;
+    text-align: center;
+    background: -webkit-linear-gradient(180deg, rgba(191,138,0,1) 0%, rgba(200,191,0,1) 30%, rgba(191,138,0,1) 70%, rgba(200,191,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
