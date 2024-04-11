@@ -8,7 +8,9 @@
             <a class="<?= $_SERVER['REQUEST_URI'] == '/tasks' ? 'active' : '' ?>" href="/tasks">Tasks</a>
         </div>
         <div class="navbar-right">
-            <a class="<?= $_SERVER['REQUEST_URI'] == '/login' ? 'active' : '' ?>" href="/login">Login</a>
+            <div class="navbar-button">
+                <a class="<?= $_SERVER['REQUEST_URI'] == '/login' ? 'active' : '' ?>" href="/login">Login</a>
+            </div>
         </div>
     </div>
 </nav>

@@ -3,7 +3,8 @@
 // Controllers
 
 use Controllers\HomeController;
-use Controllers\LoginController;
+use Controllers\SessionController;
+use Controllers\UserController;
 use Controllers\TaskController;
 
 // Routes
@@ -13,4 +14,8 @@ $router->get('/', [HomeController::class, 'index']);
 // Tasks
 $router->get('/tasks', [TaskController::class, 'index']);
 // Login
-$router->get('/login', [LoginController::class, 'index']);
+$router->get('/login', [SessionController::class, 'create']);
+$router->post('/login', [SessionController::class, 'store']);
+// Register
+$router->get('/register', [UserController::class, 'create']);
+$router->post('/register', [UserController::class, 'store']);

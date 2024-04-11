@@ -20,3 +20,11 @@ function component($component, $attributes = []) {
     extract($attributes);
     require base_path('views/components/' . $component . '.php');
 }
+
+function errors() {
+    if (isset($_COOKIE['errors'])) {
+        $errors = json_decode($_COOKIE['errors'], true);
+        setcookie('errors', '', time() - 3600, $_SERVER['REQUEST_URI']);
+    }
+    return $errors ?? [];
+}
