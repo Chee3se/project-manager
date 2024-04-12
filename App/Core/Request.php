@@ -12,7 +12,7 @@ class Request
         $this->data = $data;
         $this->server = $server;
         foreach ($this->data as $key => $value) {
-            $this->{$key} = $value;
+            $this->{$key} = trim($value);
         }
     }
 
@@ -54,7 +54,12 @@ class Request
 
         }
         if ($errors) {
-            $errors = json_encode($errors);
+            $errors = json_encode(
+                [
+                    "errors"=>$errors, 
+                    "data" =>$this->data
+                ]
+            );
             setcookie('errors', $errors, time() + (86400 * 30), $this->server['REQUEST_URI']);
             header('Location: ' . $this->server['REQUEST_URI']);
             exit();
