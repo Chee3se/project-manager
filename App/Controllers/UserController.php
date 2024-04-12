@@ -2,8 +2,7 @@
 
 namespace Controllers;
 
-use Core\App;
-use Core\Request;
+use Core\Http\Request;
 use Models\User;
 
 class UserController
@@ -36,5 +35,14 @@ class UserController
 
         header("Location: /login");
         exit();
+    }
+
+    public function show(Request $request)
+    {
+        $user = User::where('username', $_SESSION['user']);
+        view('user/show', [
+            'page_title' => 'Profile',
+            'user' => $user
+        ]);
     }
 }

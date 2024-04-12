@@ -1,8 +1,8 @@
 <?php
 
-namespace Models;
+namespace Core\Database;
 
-use Core\App;
+use Core\Container\App;
 
 /**
  * @property $id

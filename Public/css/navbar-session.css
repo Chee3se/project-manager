@@ -1,0 +1,73 @@
+
+.navbar-right-session {
+    position: relative;
+    width: 150px;
+}
+
+.navbar-image {
+    background-image: var(--yellowGradient);
+    padding: 3px;
+    height: 54px;
+    right: 0;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+}
+
+.navbar-image>img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+}
+
+.navbar-image-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: fit-content;
+}
+
+.navbar-image-button>div {
+    padding: 1px;
+    width: fit-content;
+    display: inherit;
+    flex-direction: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    transform-origin: center;
+    border-radius: 10000px;
+    transition: all .3s;
+    right: 0;
+    position: absolute;
+    background-image: var(--yellowGradient);
+}
+
+.navbar-image-button>div>a {
+    border: none;
+    font-family: inherit;
+    border-radius: 1000px;
+    text-decoration: none;
+    padding: 14px 14px 14px 14px;
+    font-size: 15px;
+    width: 30px;
+    color: transparent;
+    font-weight: 700;
+    cursor: pointer;
+    transition: inherit;
+    transform-origin: inherit;
+    transition-duration: .5s;
+    transform: scale3d(0.98, 0.98, 1.01);
+    background-color: var(--buttonBackgroundColor);
+}
+.navbar-image:hover~.navbar-image-button>div>a {
+    padding: 14px 120px 14px 28px;
+    color: var(--textColor);
+    font-size: 20px;
+}
+.navbar-image-button>div>a:hover {
+    padding: 14px 120px 14px 28px;
+    color: var(--goodRed);
+    font-size: 20px;
+}

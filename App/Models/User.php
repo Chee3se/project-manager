@@ -2,6 +2,8 @@
 
 namespace Models;
 
+use Core\Database\Model;
+
 /**
  * @property mixed $username
  * @property mixed $email

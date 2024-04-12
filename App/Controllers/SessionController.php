@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-use Core\Request;
+use Core\Http\Request;
 use Models\User;
 
 class SessionController
@@ -31,5 +31,11 @@ class SessionController
         }
 
         $request->error('username', 'Invalid username or password');
+    }
+    public function destroy()
+    {
+        $user = User::where('username', $_SESSION['user']);
+        $user->logout();
+        redirect('/login');
     }
 }

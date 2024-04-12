@@ -1,6 +1,6 @@
 <?php
 
-use Core\Session;
+use Core\Session\Session;
 
 session_start();
 
@@ -17,7 +17,7 @@ spl_autoload_register(function ($class) {
 
 require base_path('bootstrap.php');
 
-$router = new Core\Router();
+$router = new \Core\Routing\Router();
 
 $routes = require base_path('routes.php');
 

@@ -1,15 +1,14 @@
 <?php
 
-use Core\App;
-use Core\Container;
-use Models\Database;
-use Models\User;
+use Core\Container\App;
+use Core\Container\Container;
+use Core\Database\Database;
 
 
 $container = new Container();
 
 
-$container->bind('Models\Database', function () {
+$container->bind('Core\Database\Database', function () {
     $config = require base_path('config.php');
 
 

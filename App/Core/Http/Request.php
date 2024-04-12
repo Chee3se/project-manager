@@ -1,6 +1,9 @@
 <?php
 
-namespace Core;
+namespace Core\Http;
+
+use Core\Session\Session;
+use Core\Validation\Validator;
 
 class Request
 {

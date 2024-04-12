@@ -1,6 +1,6 @@
 <?php
 
-use Core\Session;
+use Core\Session\Session;
 
 function dd($data) {
     echo '<pre>';
