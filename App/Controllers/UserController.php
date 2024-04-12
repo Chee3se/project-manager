@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Core\App;
 use Core\Request;
 use Models\User;
 
@@ -17,17 +18,23 @@ class UserController
     public function store(Request $request)
     {
         $request->validate([
-            'username' => 'required|min:3|max:20',
-            'email' => 'required',
-            'password' => 'required',
+            'username' => 'required|min:3|max:20|unique:users,username',
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:20|confirmed',
             'confirm_password' => 'required'
         ]);
-        $user=new User();
-        $user->username=$request->input('username');
-        $user->email=$request->input('email');
-        $user->password=$request->input('password');
+
+        $username = $request->input('username');
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        $user = new User();
+        $user->username = $username;
+        $user->email = $email;
+        $user->password = password_hash($password, PASSWORD_DEFAULT);
         $user->save();
 
         header("Location: /login");
+        exit();
     }
 }

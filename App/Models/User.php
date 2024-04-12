@@ -2,13 +2,18 @@
 
 namespace Models;
 
+/**
+ * @property mixed $username
+ * @property mixed $email
+ * @property mixed $password
+ */
 class User extends Model
 {
     static $table = 'users';
 
     protected array $fillable = ['username', 'email', 'password'];
 
-    public function login() {
+    public function login(): void {
         $_SESSION['user'] = $this->username;
         session_regenerate_id(true);
     }

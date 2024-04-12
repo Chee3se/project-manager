@@ -4,6 +4,9 @@ namespace Models;
 
 use Core\App;
 
+/**
+ * @property $id
+ */
 abstract class Model
 {
     static $connection = null;
@@ -34,13 +37,26 @@ abstract class Model
         return $model;
     }
 
-    public static function where($column, $value): bool|array
+    public static function where($column, $value, $isarray = false): bool|Model|array
     {
         static::$connection ?? static::$connection = App::resolve(Database::class);
         $db = static::$connection;
-        $data = $db->query("SELECT * FROM ".static::$table." WHERE $column = :$column", [$column => $value])->fetchAll();
+        // Check if user is asking for multiple values (array)
+
+        if ($isarray) {
+            $data = $db->query("SELECT * FROM ".static::$table." WHERE {$column} = :{$column}", [$column => $value])->fetchAll();
+            if (!$data) { return false; }
+            return $data;
+        }
+        // Check if user is asking for a single value
+
+        $data = $db->query("SELECT * FROM ".static::$table." WHERE {$column} = :{$column}", [$column => $value])->fetch();
         if (!$data) { return false; }
-        return $data;
+        $model = new static;
+        foreach ($data as $key => $value) {
+            $model->{$key} = $value;
+        }
+        return $model;
     }
 
     public static function all(): bool|array
@@ -59,12 +75,12 @@ abstract class Model
         foreach ($this->fillable as $column) {
             $data[$column] = $this->{$column};
         }
-        return $db->insert(static::$table, $data);
+        $db->insert(static::$table, $data);
     }
 
     public function delete()
     {
         $db = static::$connection;
-        return $db->delete(static::$table, $this->id);
+        $db->delete(static::$table, $this->id);
     }
 }

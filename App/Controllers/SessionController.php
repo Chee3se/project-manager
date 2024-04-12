@@ -20,16 +20,16 @@ class SessionController
             'password' => 'required'
         ]);
 
-        //$user=User::where('username',$request->input('username'));
-        $user = User::find(2);
-        dd([$user,$user->password, $request->input('password')]);
-        if($user){
-            if($user->password==$request->input('password')){
-                dd($user);
-            }
+        $username = $request->input('username');
+        $password = $request->input('password');
+
+        $user = User::where('username', $username);
+        if ($user && password_verify($password, $user->password)) {
+            $user->login();
+            redirect('/tasks');
+            exit();
         }
-        header("Location: /login");
 
-
+        $request->error('username', 'Invalid username or password');
     }
 }

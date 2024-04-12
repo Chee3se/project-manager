@@ -28,11 +28,12 @@ class Request
 
     public function validate($data)
     {
+        Validator::set_data($this->data);
         $errors = [];
         foreach ($data as $key => $value) {
             $field = $key;
             try {
-                $field_value = $this->data[$field];
+                $field_value = trim($this->data[$field]);
             } catch (\Exception $e) {
                 $field_value = null;
             }
@@ -42,6 +43,9 @@ class Request
                 $rule = explode(':', $rule);
                 $rule_name = $rule[0];
                 $rule_value = $rule[1] ?? null;
+                if (!empty($rule_value)) {
+                    $rule_value = strpos($rule_value, ',') ? explode(',', $rule_value) : $rule_value;
+                }
                 try {
                     $result = Validator::$rule_name($field_value, $rule_value);
                 } catch (\Exception $e) {
@@ -54,15 +58,18 @@ class Request
 
         }
         if ($errors) {
-            $errors = json_encode(
-                [
-                    "errors"=>$errors, 
-                    "data" =>$this->data
-                ]
-            );
-            setcookie('errors', $errors, time() + (86400 * 30), $this->server['REQUEST_URI']);
+            Session::flash('errors', $errors);
+            Session::flash('old', $this->data);
             header('Location: ' . $this->server['REQUEST_URI']);
             exit();
         }
+    }
+
+    public function error($field, $error)
+    {
+        Session::flash('errors', [$field => [$error]]);
+        Session::flash('old', $this->data);
+        header('Location: ' . $this->server['REQUEST_URI']);
+        exit();
     }
 }

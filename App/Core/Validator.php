@@ -7,6 +7,11 @@ use Models\Database;
 class Validator
 {
     private static $connection = null;
+    private static $data = [];
+    public static function set_data($data): void
+    {
+        static::$data = $data;
+    }
     public static function min($value, $min): bool|string
     {
         if (strlen($value) >= $min) {
@@ -35,10 +40,17 @@ class Validator
         }
         return " is required.";
     }
-    public static function unique($value, $table): bool|string
+    public static function unique($value, $table_data): bool|string
     {
+        if (empty($value)) {
+            return false;
+        }
         static::$connection ?? static::$connection = App::resolve(Database::class);
-        $result = static::$connection->query("SELECT * FROM {$table} WHERE {$value} = :value", compact('value'))->fetch();
+        try {
+            $result = static::$connection->query("SELECT * FROM {$table_data[0]} WHERE {$table_data[1]} = :value", compact('value'))->fetch();
+        } catch (\Exception $e) {
+            return false;
+        }
         if (!$result) {
             return false;
         }
@@ -100,6 +112,38 @@ class Validator
             return false;
         }
         return " must be nullable.";
+    }
+
+    public static function confirmed($value): bool|string
+    {
+        if ($value === static::$data['confirm_password']) {
+            return false;
+        }
+        return " must be confirmed.";
+    }
+
+    public static function alpha($value): bool|string
+    {
+        if (ctype_alpha($value)) {
+            return false;
+        }
+        return " must be alphabetic.";
+    }
+
+    public static function alpha_num($value): bool|string
+    {
+        if (ctype_alnum($value)) {
+            return false;
+        }
+        return " must be alphanumeric.";
+    }
+
+    public static function alpha_dash($value): bool|string
+    {
+        if (preg_match('/^[a-zA-Z0-9_-]*$/', $value)) {
+            return false;
+        }
+        return " must be alphabetic, numeric, dash, or underscore.";
     }
 
 

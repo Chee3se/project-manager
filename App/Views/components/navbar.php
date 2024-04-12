@@ -11,9 +11,6 @@
             <div class="navbar-button">
                 <a class="<?= $_SERVER['REQUEST_URI'] == '/login' ? 'active' : '' ?>" href="/login">Login</a>
             </div>
-            <div class="navbar-button">
-                <a class="<?= $_SERVER['REQUEST_URI'] == '/register' ? 'active' : '' ?>" href="/register">Register</a>
-            </div>
         </div>
 
     </div>

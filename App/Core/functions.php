@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 function dd($data) {
     echo '<pre>';
     var_dump($data);
@@ -13,18 +15,28 @@ function base_path($path = '') {
 
 function view($view, $attributes = []) {
     extract($attributes);
-    require base_path('views/' . $view . '.view.php');
+    return require base_path('views/' . $view . '.view.php');
 }
 
 function component($component, $attributes = []) {
     extract($attributes);
-    require base_path('views/components/' . $component . '.php');
+    return require base_path('views/components/' . $component . '.php');
 }
 
-function errors() {
-    if (isset($_COOKIE['errors'])) {
-        $errors = json_decode($_COOKIE['errors'], true);
-        setcookie('errors', '', time() - 3600, $_SERVER['REQUEST_URI']);
-    }
-    return $errors ?? [];
+function returned_errors() {
+    $errors = Session::get('errors');
+    return compact('errors');
+}
+
+function redirect($path) {
+    header("Location: {$path}");
+}
+
+function old($key, $default = '')
+{
+    return Session::get('old')[$key] ?? $default;
+}
+
+function loggedin() {
+    return Session::get('user');
 }

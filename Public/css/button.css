@@ -1,0 +1,46 @@
+.yellow-stylish-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: fit-content;
+}
+
+.yellow-stylish-button>div {
+    padding: 1px;
+    width: fit-content;
+    display: inherit;
+    flex-direction: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    transform-origin: center;
+    border-radius: 10000px;
+    transition: all .3s;
+    background-image: var(--yellowGradient);
+}
+
+.yellow-stylish-button>div:hover {
+    padding: 3px 4px;
+}
+
+.yellow-stylish-button>div>button, .yellow-stylish-button>div>a {
+    border: none;
+    font-family: inherit;
+    border-radius: 1000px;
+    text-decoration: none;
+    padding: 14px 38px;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--textColor);
+    cursor: pointer;
+    transition: inherit;
+    transform-origin: inherit;
+    transform: scale3d(0.98, 0.98, 1.01);
+    background-color: var(--buttonBackgroundColor);
+}
+
+.yellow-stylish-button>div:hover>button, .yellow-stylish-button>div:hover>a {
+    font-size: 21px;
+    transform: scale3d(1, 1, 1.01);
+}

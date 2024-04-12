@@ -25,7 +25,7 @@ class Database
     public function delete($table, $id)
     {
         $query = $this->connection->prepare("DELETE FROM $table WHERE id = :id");
-        $query->execute(['id' => $id]);
+        $query->execute([':id' => $id]);
         return $query;
     }
 
@@ -37,7 +37,7 @@ class Database
             return ":$field";
         }, $fields);
         $query = $this->connection->prepare("INSERT INTO $table (".implode(',', $fields).") VALUES (".implode(',', $placeholders).")");
-        $query->execute(array_combine($placeholders, $values));
+        $query->execute(array_combine($fields, $values));
         return $query;
     }
 
