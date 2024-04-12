@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Core\Request;
+use Models\User;
 
 class SessionController
 {
@@ -18,6 +19,17 @@ class SessionController
             'username' => 'required|min:3|max:20',
             'password' => 'required'
         ]);
+
+        //$user=User::where('username',$request->input('username'));
+        $user = User::find(2);
+        dd([$user,$user->password, $request->input('password')]);
+        if($user){
+            if($user->password==$request->input('password')){
+                dd($user);
+            }
+        }
+        header("Location: /login");
+
 
     }
 }

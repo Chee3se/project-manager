@@ -12,7 +12,7 @@ use Controllers\TaskController;
 // Home
 $router->get('/', [HomeController::class, 'index']);
 // Tasks
-$router->get('/tasks', [TaskController::class, 'index']);
+$router->get('/tasks', [TaskController::class, 'index'])->middleware('auth');
 // Login
 $router->get('/login', [SessionController::class, 'create']);
 $router->post('/login', [SessionController::class, 'store']);
