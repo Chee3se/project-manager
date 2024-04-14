@@ -197,6 +197,27 @@ form {
     flex-direction: column;
 }
 
+.login-register-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-register {
+    text-decoration: none;
+    background: var(--yellowGradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-forgot {
+    text-decoration: none;
+    background: var(--yellowGradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /* Form field */
 
 .form-field>label {
@@ -206,7 +227,7 @@ form {
     color: var(--formLabel);
 }
 
-.form-field>input {
+.form-field>input, .form-field>textarea {
     border: none;
     border-radius: 15px;
     padding: 15px 30px;
@@ -217,17 +238,17 @@ form {
     background-color: var(--formInputBackground);
 }
 
-.form-field>input::placeholder {
+.form-field>input::placeholder, .form-field>textarea::placeholder {
     color: var(--formPlaceholder);
     opacity: .8;
 }
 
-.form-field>input:focus {
+.form-field>input:focus, .form-field>textarea:focus {
     outline: none;
     background-color: var(--darkGray);
 }
 
-.form-field>input:hover {
+.form-field>input:hover, .form-field>textarea:hover {
     background-color: var(--darkGray);
 }
 

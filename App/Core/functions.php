@@ -40,3 +40,12 @@ function old($key, $default = '')
 function loggedin() {
     return Session::get('user');
 }
+
+function error($error) {
+    $errors = Session::get('errors');
+    if ($errors) {
+        if (array_key_exists($error, $errors)) {
+            return "<p class='form-error' >{$errors[$error][0]}</p>";
+        }
+    }
+}

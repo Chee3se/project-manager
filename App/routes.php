@@ -13,13 +13,15 @@ use Controllers\TaskController;
 $router->get('/', [HomeController::class, 'index']);
 // Tasks
 $router->get('/tasks', [TaskController::class, 'index'])->middleware('auth');
+$router->get('/tasks/create', [TaskController::class, 'create'])->middleware('auth');
+$router->post('/tasks', [TaskController::class, 'store'])->middleware('auth');
 // Login
-$router->get('/login', [SessionController::class, 'create']);
-$router->post('/login', [SessionController::class, 'store']);
+$router->get('/login', [SessionController::class, 'create'])->middleware('guest');
+$router->post('/login', [SessionController::class, 'store'])->middleware('guest');
 // Logout
-$router->get('/logout', [SessionController::class, 'destroy']);
+$router->get('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 // Register
-$router->get('/register', [UserController::class, 'create']);
-$router->post('/register', [UserController::class, 'store']);
+$router->get('/register', [UserController::class, 'create'])->middleware('guest');
+$router->post('/register', [UserController::class, 'store'])->middleware('guest');;
 // Profile
 $router->get('/profile', [UserController::class, 'show'])->middleware('auth');

@@ -48,7 +48,7 @@ abstract class Model
             if (!$data) { return false; }
             return $data;
         }
-        // Check if user is asking for a single value
+        // Check if user is asking for a single value (Model)
 
         $data = $db->query("SELECT * FROM ".static::$table." WHERE {$column} = :{$column}", [$column => $value])->fetch();
         if (!$data) { return false; }

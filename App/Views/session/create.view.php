@@ -14,15 +14,15 @@
             <label for="password">Password</label>
             <input placeholder="********" type="password" name="password" id="password" required value="<?= old('password') ?>">
         </div>
-        <?php if (isset($errors['username'])): ?>
-            <p class="form-error"><?= $errors['username'][0] ?></p>
-        <?php endif; ?>
+        <?= error('username') ?>
         <div class="yellow-stylish-button form-button">
             <div>
                 <button>Login</button>
             </div>
         </div>
+        <div class="login-register-div">
+            <a class="login-register" href="/register">Register</a>
+            <a class="login-forgot" href="/forgot">Forgot Password</a>
+        </div>
     </form>
-    <h2 class="">Don't have an account? </h2>
-    <div class="yellow-stylish-button"><div><a href="/register">Register</a></div></div>
 <?php component('footer'); ?>

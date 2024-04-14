@@ -9,33 +9,8 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (username, password, email)
-VALUES ('admin', 'root', 'admin@example.com');
-/*
-Sākotnēji izstrādā tīmekļa vietnes pamata dizainu un lietotāja saskarni, kurā iekļauj šādas funkcionalitātes:
-a. Lietotāja reģistrācija un pieteikšanās sistēma.
-
-b. Darba uzdevumu pievienošana, kur katram uzdevumam ir šādas informācijas vienības:
-Nosaukums
-Apraksts
-Termiņš
-
-c. Uzdevumu saraksta attēlošana, kur lietotāji var apskatīt savus pievienotos uzdevumus.
-
-d. Uzdevumu atzīmēšana kā pabeigtus vai nepabeigtus.
-
-e. Uzdevumu dzēšana.
-
-f. Darba plānošanas kalendārs, kur var apskatīt visus uzdevumu termiņus.
-
-g. Meklēšanas funkcija, lai ātri atrastu konkrētu uzdevumu.
-
-Izveido datu bāzi, kurā tiek glabāti lietotāju reģistrācijas dati un uzdevumu informācija. Lietotājiem jāvar piekļūt savam personīgajam kontam un datiem, un jābūt iespējai atgūt paroli, ja to aizmirsuši.
-
-Nodrošini, lai tīmekļa vietne būtu responsīva un pielāgojas dažādām ierīcēm un ekrāna izmēriem.
-
-Papildini tīmekļa vietni ar kādu papildu funkcionalitāti, piemēram, iespēju izveidot projektus vai kategorijas uzdevumiem, sadalīt uzdevumus atbilstoši to prioritātei vai sarežģītībai, un iestatīt atgādinājumus termiņu tuvošanās gadījumā.
-*/
-
+VALUES ('admin', '$2y$10$3iOJb95ihl.2PhkmacrKAeMJE/1PTJ3fhhGNuk5XG5NMAIHVOR1zC', 'admin@example.com');
+/* password: root123 */
 CREATE TABLE tasks (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(50) NOT NULL,
