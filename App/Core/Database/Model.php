@@ -23,8 +23,10 @@ abstract class Model
 
     public static function find($id): bool|Model
     {
-        static::$connection ?? static::$connection = App::resolve(Database::class);
-        $db = static::$connection;
+        if (!self::$connection) {
+            self::$connection = App::resolve(Database::class);
+        }
+        $db = self::$connection;
         $data = $db->query("SELECT * FROM ".static::$table." WHERE id = :id", compact('id'))->fetch();
 
         if (!$data) { return false; }
@@ -39,8 +41,10 @@ abstract class Model
 
     public static function where($column, $value, $isarray = false): bool|Model|array
     {
-        static::$connection ?? static::$connection = App::resolve(Database::class);
-        $db = static::$connection;
+        if (!self::$connection) {
+            self::$connection = App::resolve(Database::class);
+        }
+        $db = self::$connection;
         // Check if user is asking for multiple values (array)
 
         if ($isarray) {
@@ -49,10 +53,10 @@ abstract class Model
             return $data;
         }
         // Check if user is asking for a single value (Model)
-
         $data = $db->query("SELECT * FROM ".static::$table." WHERE {$column} = :{$column}", [$column => $value])->fetch();
         if (!$data) { return false; }
         $model = new static;
+
         foreach ($data as $key => $value) {
             $model->{$key} = $value;
         }

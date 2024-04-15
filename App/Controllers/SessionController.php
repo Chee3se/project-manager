@@ -22,7 +22,6 @@ class SessionController
 
         $username = $request->input('username');
         $password = $request->input('password');
-
         $user = User::where('username', $username);
         if ($user && password_verify($password, $user->password)) {
             $user->login();

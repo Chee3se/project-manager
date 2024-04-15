@@ -2,23 +2,22 @@
 <?php component('navbar'); ?>
     <h1 class='special-h1 normal-h1'>Your current <span>Tasks</span></h1>
     <div class="container">
-<!--        --><?php //dd($tasks);?>
         <?php foreach ($tasks as $task): ?>
             <div class="task">
-
-                <p><?= $task['title'] ?></p>
-                <p><?= $task['description'] ?></p>
+    <div class="column">
+                <div class="task-container">
+                    <p><?= $task['title'] ?></p>
+                    <p><?= $task['description'] ?></p>
+                </div>
+    </div>
+    <div class="column">
                 <p><?= $task['start_date']?></p>
                 <p><?= $task['deadline'] ?></p>
+    </div>
+    <div class="column">
                 <p><?= $task['completed'] ?></p>
-                <form action="/tasks" method="post">
-                    <div class="yellow-stylish-button form-button">
-                        <div>
-                            <button>Delete</button>
-                        </div>
-                    </div>
-                </form>
-
+                <button>Delete</button>
+    </div>
             </div>
         <?php endforeach; ?>
         <div class="create-task">
