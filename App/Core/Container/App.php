@@ -4,7 +4,7 @@ namespace Core\Container;
 
 class App
 {
-    protected static $container;
+    protected static Container $container;
 
     public static function setContainer($container)
     {
@@ -23,6 +23,7 @@ class App
 
     public static function resolve($key)
     {
+
         return static::container()->resolve($key);
     }
 }

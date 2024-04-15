@@ -14,9 +14,6 @@ class Request
     {
         $this->data = $data;
         $this->server = $server;
-        foreach ($this->data as $key => $value) {
-            $this->{$key} = trim($value);
-        }
     }
 
     public function all()
