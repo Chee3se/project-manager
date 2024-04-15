@@ -41,24 +41,3 @@
     color: var(--textColor);
     transition: all .5s;
 }
-
-.task-container{
-    display: grid;
-    gap: 5px;
-}
-.column {
-    flex: 1;
-    padding: 10px;
-    height: 50vh;
-    position: relative;
-}
-
-.column:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: #ffffff; /* Line color */
-}
