@@ -2,18 +2,18 @@
 
 namespace Models;
 
-use Core\Database\Model;
-/**
- * @property mixed $title
- * @property mixed $description
- * @property mixed $deadline
- * @property mixed $completed
- * @property mixed $user_id
- */
+    use Core\Database\Model;
+
 class Task extends Model
 {
     static $table = 'tasks';
 
-    protected array $fillable = ['title', 'description', 'deadline', 'completed', 'user_id'];
+    protected array $fillable = ['title', 'description', 'start_date', 'deadline', 'completed', 'user_id'];
 
+    public $title;
+    public $description;
+    public $start_date;
+    public $deadline;
+    public $completed;
+    public $user_id;
 }
