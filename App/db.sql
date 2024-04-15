@@ -21,6 +21,9 @@ CREATE TABLE tasks (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
+ALTER TABLE tasks
+    ADD COLUMN start_date DATE;
+
 INSERT INTO tasks (title, description, deadline, user_id)
 VALUES ('Task 1', 'Description 1', '2021-12-31', 1),
        ('Task 2', 'Description 2', '2021-12-31', 1),

@@ -29,11 +29,13 @@ class TaskController
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'start_date' => 'required',
             'deadline' => 'required'
         ]);
         $task = new Task();
         $task->title = $request->input('title');
         $task->description = $request->input('description');
+        $task->start_date = $request->input('start_date');
         $task->deadline = $request->input('deadline');
         $task->completed = 0;
 
