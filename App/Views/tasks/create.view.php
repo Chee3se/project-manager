@@ -2,7 +2,7 @@
 <?php component('navbar'); ?>
 <?php extract(returned_errors()); ?>
     <h1 class="special-h1 normal-h1"><span>Create a Task</span></h1>
-    <form action="/tasks" method="post">
+    <form  method="POST">
         <div class="form-field">
             <label for="title">Title</label>
             <input placeholder="Task Title" type="text" name="title" id="title" required value="<?= old('title') ?>">

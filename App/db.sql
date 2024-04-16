@@ -22,7 +22,10 @@ CREATE TABLE tasks (
 );
 
 ALTER TABLE tasks
-ADD COLUMN start_date DATE
+ADD COLUMN start_date DATE;
+
+ALTER TABLE tasks
+    ADD COLUMN status ENUM ('todo','doing','done');
 
 INSERT INTO tasks (title, description, start_date, deadline, user_id)
 VALUES ('Task 1', 'Description 1','2021-12-30', '2021-12-31', 1),
