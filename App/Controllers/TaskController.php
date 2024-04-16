@@ -38,7 +38,7 @@ class TaskController
         $task->description = $request->input('description');
         $task->start_date = date('Y-m-d');
         $task->deadline = $request->input('deadline');
-        $task->completed = 0;
+        $task->status = 'todo';
         $user = User::where('username', $_SESSION['user']);
         $task->user_id = $user->id;
         $task->save();
