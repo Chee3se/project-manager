@@ -4,6 +4,7 @@ namespace Core\Routing;
 
 use Core\Http\Request;
 use Core\Middleware\Middleware;
+use Core\Session\Session;
 
 class Router
 {
@@ -74,6 +75,7 @@ class Router
                         // If the route does not specify any parameters, just call the method
                         return $class->$method();
                     } else {
+                        // Set the old uri to the session
                         $post_params = [];
                         // Check if the route wants first parameter to be the request object
                         if ($methodParams[0]->getType() == Request::class) {

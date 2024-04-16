@@ -57,19 +57,23 @@ class Request
             }
 
         }
-        if ($errors) {
+
+        if (!empty($errors)) {
             Session::flash('errors', $errors);
             Session::flash('old', $this->data);
-            header('Location: ' . $this->server['REQUEST_URI']);
+            $uri = Session::get('old_uri');
+            redirect($uri);
             exit();
         }
+        return;
     }
 
     public function error($field, $error)
     {
         Session::flash('errors', [$field => [$error]]);
         Session::flash('old', $this->data);
-        header('Location: ' . $this->server['REQUEST_URI']);
+        $uri = Session::get('old_uri');
+        redirect($uri);
         exit();
     }
 }
