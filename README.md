@@ -19,6 +19,6 @@ This is a simple project manager made using php and multiple colaborators for a 
 
 ## Screenshots
 
-![screenshot](screenshot1.png)
+![screenshot](screenshot_one.png)
 
-![screenshot](screenshot2.png)
+![screenshot](screenshot_two.png)
