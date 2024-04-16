@@ -5,11 +5,11 @@
         <?php if(!$tasks){$tasks = [];} ?>
 
 
-    <div class="task_type">
+    <div class="task_type" ondrop="drop(event, 'todo')" ondragover="allowDrop(event)">
             <h2>To do</h2>
         <?php foreach ($tasks as $task): ?>
         <?php if($task['status']=='todo'){?>
-            <div class="task">
+                <div class="task" draggable="true" ondragstart="drag(event)" id="<?= $task['id'] ?>">
                     <h3><?= $task['title'] ?></h3>
                     <p><?= $task['description'] ?></p>
                     <p><?= $task['start_date']?></p>
@@ -21,11 +21,11 @@
 
 
 
-    <div class="task_type">
+    <div class="task_type" ondrop="drop(event, 'doing')" ondragover="allowDrop(event)">
             <h2>Doing</h2>
         <?php foreach ($tasks as $task): ?>
             <?php if($task['status']=='doing'){?>
-                <div class="task">
+                <div class="task" draggable="true" ondragstart="drag(event)" id="<?= $task['id'] ?>">
                     <h3><?= $task['title'] ?></h3>
                     <p><?= $task['description'] ?></p>
                     <p><?= $task['start_date']?></p>
@@ -35,11 +35,11 @@
         <?php endforeach; ?>
     </div>
 
-    <div class="task_type">
+    <div class="task_type" ondrop="drop(event, 'done')" ondragover="allowDrop(event)">
             <h2>Done</h2>
         <?php foreach ($tasks as $task): ?>
             <?php if($task['status']=='done'){?>
-                <div class="task">
+                <div class="task" draggable="true" ondragstart="drag(event)" id="<?= $task['id'] ?>">
                     <h3><?= $task['title'] ?></h3>
                     <p><?= $task['description'] ?></p>
                     <p><?= $task['start_date']?></p>
@@ -48,17 +48,6 @@
             <?php }?>
         <?php endforeach; ?>
     </div>
-
-
-
-
-<!--        <form method=" post">-->
-<!--            <input type="hidden" name="id" value="--><?php //= $task["id"]?><!--" />-->
-<!--            <input type="hidden" name="_method" value="DELETE" />-->
-<!--            <button>Delete</button>-->
-<!--        </form>-->
-
-
 
 
         </div>

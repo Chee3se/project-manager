@@ -10,7 +10,7 @@
         <?php if ($_SESSION['user'] ?? false) : ?>
             <div class="navbar-right-session">
                 <a class="navbar-image" href="/profile">
-                    <img src="images/default_user.png" />
+                    <img src="/images/default_user.png" />
                 </a>
                 <div class="navbar-image-button">
                     <div>

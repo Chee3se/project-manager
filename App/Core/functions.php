@@ -49,3 +49,7 @@ function error($error) {
         }
     }
 }
+
+function console_error($error) {
+    echo '<script>console.error("'.addslashes($error).'")</script>';
+}

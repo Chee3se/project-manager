@@ -26,3 +26,5 @@ $router->get('/register', [UserController::class, 'create'])->middleware('guest'
 $router->post('/register', [UserController::class, 'store'])->middleware('guest');;
 // Profile
 $router->get('/profile', [UserController::class, 'show'])->middleware('auth');
+// Update status of task (AJAX)
+$router->post('/task/update_status', [TaskController::class, 'update_status'])->middleware('auth');

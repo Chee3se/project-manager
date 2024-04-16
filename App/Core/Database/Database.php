@@ -2,7 +2,9 @@
 
 namespace Core\Database;
 
+use Exception;
 use PDO;
+use PDOStatement;
 
 class Database
 {
@@ -15,42 +17,51 @@ class Database
         $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
 
-    public function query($query_string, $params = [])
+    public function query($query_string, $params = []): false|PDOStatement
     {
         $query = $this->connection->prepare($query_string);
-        $query->execute($params);
+        try {
+            $query->execute($params);
+        } catch (Exception $e) {
+            http_response_code(500);
+            require base_path("views/500.view.php");
+            console_error($e->getMessage());
+            die();
+        }
         return $query;
     }
 
-    public function delete($table, $id)
+    public function delete($table, $id): void
     {
-        $query = $this->connection->prepare("DELETE FROM $table WHERE id = :id");
-        $query->execute([':id' => $id]);
-        return $query;
+        $this->query(
+            "DELETE FROM $table WHERE id = :id",
+            [':id' => $id]
+        );
     }
 
-    public function insert($table, $data)
+    public function insert($table, $data): void
     {
         $fields = array_keys($data);
         $values = array_values($data);
         $placeholders = array_map(function ($field) {
             return ":$field";
         }, $fields);
-        $query = $this->connection->prepare("INSERT INTO $table (".implode(',', $fields).") VALUES (".implode(',', $placeholders).")");
-        $query->execute(array_combine($fields, $values));
-        return $query;
+        $this->query(
+            "INSERT INTO $table (".implode(',', $fields).") VALUES (".implode(',', $placeholders).")",
+            array_combine($placeholders, $values)
+        );
     }
 
-    public function update($table, $id, $data)
+    public function update($table, $id, $data): void
     {
         $fields = array_keys($data);
-        $values = array_values($data);
         $placeholders = array_map(function ($field) {
             return "$field = :$field";
         }, $fields);
-        $query = $this->connection->prepare("UPDATE $table SET ".implode(',', $placeholders)." WHERE id = :id");
-        $query->execute(array_combine($fields, $values) + ['id' => $id]);
-        return $query;
+        $this->query(
+            "UPDATE $table SET ".implode(', ', $placeholders)." WHERE id = :id",
+            array_merge($data, [':id' => $id])
+        );
     }
 
     public function __destruct()

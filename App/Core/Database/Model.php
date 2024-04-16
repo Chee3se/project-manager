@@ -81,7 +81,11 @@ abstract class Model
         foreach ($this->fillable as $column) {
             $data[$column] = $this->{$column};
         }
-        $db->insert(static::$table, $data);
+        if ($this->id) {
+            $db->update(static::$table, $this->id, $data);
+        } else {
+            $db->insert(static::$table, $data);
+        }
     }
 
     public function delete()

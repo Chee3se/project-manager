@@ -9,6 +9,15 @@ use Models\User;
 
 class TaskController
 {
+    public function update_status()
+    {
+        $id = $_POST['id'];
+        $status = $_POST['status'];
+
+        $task = Task::find($id);
+        $task->status = $status;
+        $task->save();
+    }
     public function index()
     {
         $tasks = Task::all();
