@@ -16,14 +16,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--darkGray);
+    background-color: var(--formInputBackground);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex-direction: column;
-
-
-
-
 }
 
 .create-task {
@@ -35,7 +31,7 @@
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-    background-color: var(--darkGray);
+    background-color: var(--buttonBackgroundColor);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -69,9 +65,10 @@
     display: grid;
     justify-content: center;
     width: 20vw;
-    background: var(--formBorder);
+    background: var(--buttonBackgroundColor);
+    border: solid 1px var(--formBorder);
     border-radius: 10px;
-    padding: 0 6px;
+    padding: 0 6px 40px 6px;
 
 }
 .task>h3{
