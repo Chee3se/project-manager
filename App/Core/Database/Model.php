@@ -12,6 +12,7 @@ abstract class Model
     static $connection = null;
     static $table;
     protected array $fillable = [];
+    public $id;
 
     function __construct()
     {
@@ -61,6 +62,7 @@ abstract class Model
             $model->{$key} = $value;
         }
         return $model;
+
     }
 
     public static function all(): bool|array

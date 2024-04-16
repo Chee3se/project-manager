@@ -146,12 +146,12 @@ class Validator
         }
         return " must be alphabetic, numeric, dash, or underscore.";
     }
-    public static function not_today($value): bool|string {
-
-        if($value > date('Y-m-d')){
+    public static function not_today($value): bool|string
+    {
+        if ($value > date('Y-m-d')) {
             return false;
         }
-        return " must be not today ";
+        return " must not be today.";
     }
 
 }

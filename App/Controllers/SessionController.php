@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Core\Http\Request;
+use Core\Session\Session;
 use Models\User;
 
 class SessionController

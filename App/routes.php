@@ -14,7 +14,7 @@ $router->get('/', [HomeController::class, 'index']);
 // Tasks
 $router->get('/tasks', [TaskController::class, 'index'])->middleware('auth');
 $router->get('/tasks/create', [TaskController::class, 'create'])->middleware('auth');
-$router->post('/tasks/create', [TaskController::class, 'store'])->middleware('auth');
+$router->post('/tasks', [TaskController::class, 'store'])->middleware('auth');
 $router->delete('/tasks/{id}', [TaskController::class, 'destroy'])->middleware('auth');
 // Login
 $router->get('/login', [SessionController::class, 'create'])->middleware('guest');
