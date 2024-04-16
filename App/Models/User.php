@@ -4,16 +4,15 @@ namespace Models;
 
 use Core\Database\Model;
 
-/**
- * @property mixed $username
- * @property mixed $email
- * @property mixed $password
- */
 class User extends Model
 {
     static $table = 'users';
 
     protected array $fillable = ['username', 'email', 'password'];
+
+    public $username;
+    public $email;
+    public $password;
 
     public function login(): void {
         $_SESSION['user'] = $this->username;

@@ -21,10 +21,13 @@ CREATE TABLE tasks (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-INSERT INTO tasks (title, description, deadline, user_id)
-VALUES ('Task 1', 'Description 1', '2021-12-31', 1),
-       ('Task 2', 'Description 2', '2021-12-31', 1),
-       ('Task 3', 'Description 3', '2021-12-31', 1);
+ALTER TABLE tasks
+ADD COLUMN start_date DATE
+
+INSERT INTO tasks (title, description, start_date, deadline, user_id)
+VALUES ('Task 1', 'Description 1','2021-12-30', '2021-12-31', 1),
+       ('Task 2', 'Description 2','2021-12-30', '2021-12-31', 1),
+       ('Task 3', 'Description 3','2021-12-30', '2021-12-31', 1);
 
 
 
