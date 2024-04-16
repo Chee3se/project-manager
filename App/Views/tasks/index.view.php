@@ -20,6 +20,7 @@
     </div>
 
 
+
     <div class="task_type">
             <h2>Doing</h2>
         <?php foreach ($tasks as $task): ?>
