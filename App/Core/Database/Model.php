@@ -49,12 +49,12 @@ abstract class Model
         // Check if user is asking for multiple values (array)
 
         if ($isarray) {
-            $data = $db->query("SELECT * FROM ".static::$table." WHERE {$column} = :{$column}", [$column => $value])->fetchAll();
+            $data = $db->query("SELECT * FROM ".static::$table." WHERE {$column} = :{$column}", [":{$column}" => $value])->fetchAll();
             if (!$data) { return false; }
             return $data;
         }
         // Check if user is asking for a single value (Model)
-        $data = $db->query("SELECT * FROM ".static::$table." WHERE {$column} = :{$column}", [$column => $value])->fetch();
+        $data = $db->query("SELECT * FROM ".static::$table." WHERE {$column} = :{$column}", [":{$column}" => $value])->fetch();
         if (!$data) { return false; }
         $model = new static;
 

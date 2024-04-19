@@ -40,6 +40,7 @@ class UserController
     public function show(Request $request)
     {
         $user = User::where('username', $_SESSION['user']);
+
         view('user/show', [
             'page_title' => 'Profile',
             'user' => $user

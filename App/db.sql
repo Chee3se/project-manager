@@ -29,7 +29,7 @@ VALUES
 ('Task 2', 'Description 2', '2021-01-05', '2021-01-15', 1),
 ('Task 3', 'Description 3', '2021-01-10', '2021-01-20', 1);
 
-/*
+
 CREATE TABLE projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
@@ -68,7 +68,7 @@ VALUES
 (1, 1, 'Task 1'),
 (1, 1, 'Task 2'),
 (1, 1, 'Task 3');
-*/
+
 /* Projekti stāv 'projects' ceļā, kas būs 'tasks' vietā, kur zem projekta nosaikuma ir attēlotas lietotāju bildes. Projektu izkārtojums lapā pašlaik nav svarīgs, bet galvenā ideja ir lai ir uzraksts/nosaukums augšā, pa labi apakšā ir poga un kad peles kursors ir pār to tā paliek sarkana, jo ar to var izdzēst projektu. Projekta sasaistīšana ar lietotāju droši vien arī notiks ar 'project_id' vērtību, piem tabula TASKS - | id | project_id | user_id (identificēs lietotāju, kas ir atbildīgs par šī uzdevuma pildīšanu, ne to, kam pieder projekts kaut vai tas ir iespējams, ja lietotājs uzņemās atbildību) | description (title nevajag manuprāt) | start_date | due_date | status | un tabula PROJECTS - | id | name | owner_id | un tabula PROJECT_USERS - | id | project_id | user_id | */
 
 
