@@ -20,6 +20,7 @@ $router->delete('/tasks/{id}', [TaskController::class, 'destroy'])->middleware('
 //Projects
 $router->get('/projects', [ProjectsController::class, 'index'])->middleware('auth');
 $router->get('/projects/create', [ProjectsController::class, 'create'])->middleware('auth');
+$router->post('/projects', [ProjectsController::class, 'store'])->middleware('auth');
 // Login
 $router->get('/login', [SessionController::class, 'create'])->middleware('guest');
 $router->post('/login', [SessionController::class, 'store'])->middleware('guest');

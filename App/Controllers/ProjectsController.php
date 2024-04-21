@@ -23,4 +23,18 @@ class ProjectsController
             'page_title' => 'Create Project'
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $projects = new Projects();
+        $projects->name = $request->input('name');
+        $user = User::where('username', $_SESSION['user']);
+        $projects->owner_id = $user->id;
+        $projects->save();
+
+        redirect('/projects');
+    }
 }

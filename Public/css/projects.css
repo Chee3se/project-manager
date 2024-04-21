@@ -1,0 +1,43 @@
+
+.p_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 20vh;
+    gap: 10px;
+
+}
+
+.project {
+    width: 15vw;
+    height: 30vh;
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--formInputBackground);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    cursor: pointer;
+    border-style: solid;
+    border-color: var(--formInputBackground);
+    transition: 0.7s;
+}
+
+.project:hover{
+    border-color: #ffdd00;
+    transition: 0.7s;
+}
+.p_type{
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    width: 20vw;
+    background: var(--buttonBackgroundColor);
+    border: solid 1px var(--formBorder);
+    border-radius: 10px;
+    padding: 0 6px 40px 6px;
+
+}
