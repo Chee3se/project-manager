@@ -26,11 +26,13 @@ class SessionController
         $user = User::where('username', $username);
         if ($user && password_verify($password, $user->password)) {
             $user->login();
-            redirect('/tasks');
+            redirect('/projects');
             exit();
         }
 
         $request->error('username', 'Invalid username or password');
+
+        Session::put('project_id',);
     }
     public function destroy()
     {

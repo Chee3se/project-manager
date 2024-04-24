@@ -41,3 +41,11 @@
     padding: 0 6px 40px 6px;
 
 }
+
+a{
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--textColor);
+    padding: 13px 35px;
+
+}

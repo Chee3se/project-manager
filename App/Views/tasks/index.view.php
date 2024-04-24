@@ -8,12 +8,11 @@
     <div class="task_type" ondrop="drop(event, 'todo')" ondragover="allowDrop(event)">
             <h2>To do</h2>
         <?php foreach ($tasks as $task): ?>
-        <?php if($task['status']=='todo'){?>
+        <?php if($task['status']=='assigned'){?>
                 <div class="task" draggable="true" ondragstart="drag(event)" id="<?= $task['id'] ?>">
-                    <h3><?= $task['title'] ?></h3>
                     <p><?= $task['description'] ?></p>
                     <p><?= $task['start_date']?></p>
-                    <p><?= $task['deadline'] ?></p>
+                    <p><?= $task['due_date'] ?></p>
                 </div>
         <?php }?>
         <?php endforeach; ?>
@@ -24,7 +23,7 @@
     <div class="task_type" ondrop="drop(event, 'doing')" ondragover="allowDrop(event)">
             <h2>Doing</h2>
         <?php foreach ($tasks as $task): ?>
-            <?php if($task['status']=='doing'){?>
+            <?php if($task['status']=='pending'){?>
                 <div class="task" draggable="true" ondragstart="drag(event)" id="<?= $task['id'] ?>">
                     <h3><?= $task['title'] ?></h3>
                     <p><?= $task['description'] ?></p>
@@ -38,7 +37,7 @@
     <div class="task_type" ondrop="drop(event, 'done')" ondragover="allowDrop(event)">
             <h2>Done</h2>
         <?php foreach ($tasks as $task): ?>
-            <?php if($task['status']=='done'){?>
+            <?php if($task['status']=='completed'){?>
                 <div class="task" draggable="true" ondragstart="drag(event)" id="<?= $task['id'] ?>">
                     <h3><?= $task['title'] ?></h3>
                     <p><?= $task['description'] ?></p>

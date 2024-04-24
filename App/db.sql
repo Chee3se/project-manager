@@ -12,23 +12,6 @@ INSERT INTO users (username, password, email)
 VALUES ('admin', '$2y$10$3iOJb95ihl.2PhkmacrKAeMJE/1PTJ3fhhGNuk5XG5NMAIHVOR1zC', 'admin@example.com');
 /* password: root123 */
 
-CREATE TABLE tasks (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(50) NOT NULL,
-    description TEXT,
-    start_date DATE,
-    deadline DATE,
-    status ENUM('todo', 'doing', 'done') DEFAULT 'todo',
-    user_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
-
-INSERT INTO tasks (title, description, start_date, deadline, user_id)
-VALUES
-('Task 1', 'Description 1', '2021-01-01', '2021-01-10', 1),
-('Task 2', 'Description 2', '2021-01-05', '2021-01-15', 1),
-('Task 3', 'Description 3', '2021-01-10', '2021-01-20', 1);
-
 
 CREATE TABLE projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -52,7 +35,7 @@ CREATE TABLE tasks (
     description TEXT,
     start_date DATE,
     due_date DATE,
-    status ENUM('pending', 'completed') DEFAULT 'pending',
+    status ENUM('assigned','pending', 'completed') DEFAULT 'assigned',
     FOREIGN KEY (project_id) REFERENCES projects(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );

@@ -8,11 +8,11 @@
     <div class="p_type" >
         <h2>Projects</h2>
         <?php foreach ($projects as $project): ?>
-
+            <a href="/tasks?project_id=<?=$project['id']?>" >
                 <div class="project" >
-                        <h3><?= $project['name'] ?></h3>
+                        <h3> <?= $project['name'] ?></h3>
                 </div>
-
+            </a>
         <?php endforeach; ?>
     </div>
 </div>

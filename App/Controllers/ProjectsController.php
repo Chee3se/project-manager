@@ -11,6 +11,7 @@ class ProjectsController
 
     public function index()
     {
+
         $projects = Projects::all();
         view('projects/index', [
             'page_title' => 'My projects',
@@ -36,5 +37,9 @@ class ProjectsController
         $projects->save();
 
         redirect('/projects');
+    }
+
+    public function show(){
+
     }
 }
