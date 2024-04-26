@@ -70,8 +70,35 @@ class TaskController
 
         if($task){
             $task->delete();
-
         }
+
+        redirect('/tasks');
+    }
+
+    public function edit($id)
+    {
+
+
+        $task =Task::find($id);
+        view('tasks/edit',[
+            'page_title'=>'edit',
+            'task'=>$task
+        ]);
+    }
+
+    public function update(Request $request){
+
+        $request->validate([
+            'description' => 'required',
+            'due_date' => 'required|not_today'
+        ]);
+
+        $id=$request->input('id');
+        $task=Task::find($id);
+        $task->description = $request->input('description');
+        $task->start_date = date('Y-m-d');
+        $task->due_date = $request->input('due_date');
+        $task->save();
         redirect('/tasks');
     }
 }

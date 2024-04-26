@@ -17,6 +17,8 @@ $router->get('/tasks', [TaskController::class, 'index'])->middleware('auth');
 $router->get('/tasks/create', [TaskController::class, 'create'])->middleware('auth');
 $router->post('/tasks', [TaskController::class, 'store'])->middleware('auth');
 $router->delete('/tasks/{id}', [TaskController::class, 'destroy'])->middleware('auth');
+$router->get('/tasks/edit/{id}', [TaskController::class, 'edit'])->middleware('auth');
+$router->patch('/tasks', [TaskController::class, 'update'])->middleware('auth');
 //Projects
 $router->get('/projects', [ProjectsController::class, 'index'])->middleware('auth');
 $router->get('/projects/create', [ProjectsController::class, 'create'])->middleware('auth');
