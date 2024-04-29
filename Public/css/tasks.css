@@ -90,3 +90,28 @@
     overflow-wrap: break-word;
 }
 
+.delete_form{
+    background: none;
+    border:none;
+    padding: 0;
+    margin-left: 200px ;
+    margin-top: -50px;
+
+}
+
+.delete{
+    cursor: pointer;
+    border-color: var(--formInputBackground);
+    transition: 0.7s;
+}
+
+.delete button{
+    background-color: var(--formInputBackground);
+    border: var(--formInputBackground);
+    color: white;
+}
+
+.delete:hover{
+    border-color: #ffdd00;
+    transition: 0.7s;
+}

@@ -28,3 +28,4 @@ function drop(ev, status) {
         xhr.send("id=" + id + "&status=" + status);
     }
 }
+

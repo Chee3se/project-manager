@@ -21,4 +21,7 @@
         </div>
     </div>
 </form>
+
+
+
 <?php component('footer'); ?>

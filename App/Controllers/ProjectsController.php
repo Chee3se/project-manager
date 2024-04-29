@@ -12,7 +12,8 @@ class ProjectsController
     public function index()
     {
 
-        $projects = Projects::all();
+        $projects = Projects::where('owner_id', $_SESSION['id'],true);
+
         view('projects/index', [
             'page_title' => 'My projects',
             'projects' => $projects
@@ -39,7 +40,5 @@ class ProjectsController
         redirect('/projects');
     }
 
-    public function show(){
 
-    }
 }

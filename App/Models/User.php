@@ -16,6 +16,7 @@ class User extends Model
 
     public function login(): void {
         $_SESSION['user'] = $this->username;
+        $_SESSION['id'] = $this->id;
         session_regenerate_id(true);
     }
 
