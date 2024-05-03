@@ -6,5 +6,6 @@
     <title><?= $page_title?></title>
     <link rel="stylesheet" href="/css/index.css">
     <script src="/js/script.js"></script>
+    <script src="/js/members.js"></script>
 </head>
 <body>

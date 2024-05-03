@@ -6,6 +6,7 @@
         <div class="navbar-center">
             <a class="<?= $_SERVER['REQUEST_URI'] == '/' ? 'active' : '' ?>" href="/">Home</a>
             <a class="<?= $_SERVER['REQUEST_URI'] == '/projects' ? 'active' : '' ?>" href="/projects">Projects</a>
+            <a class="<?= $_SERVER['REQUEST_URI'] == '/schedule' ? 'active' : '' ?>" href="/schedule">Schedule</a>
         </div>
         <?php if ($_SESSION['user'] ?? false) : ?>
             <div class="navbar-right-session">

@@ -1,20 +1,33 @@
 <?php component('header', compact('page_title')); ?>
 <?php component('navbar'); ?>
 <h1 class='special-h1 normal-h1'>Your current <span>Projects</span></h1>
+<?php if(!$projects){$projects = [];} ?>
+<?php if(!$members){$members = [];} ?>
+
 <div class="p_container">
-    <?php if(!$projects){$projects = [];} ?>
-
-
-    <div class="p_type" >
-        <h2>Projects</h2>
         <?php foreach ($projects as $project): ?>
+
+            <div class="p_type" >
             <a href="/tasks?project_id=<?=$project['id']?>" >
                 <div class="project" >
-                        <h3> <?= $project['name'] ?></h3>
+                        <h3> <?= $project['name'] ?> </h3>
                 </div>
             </a>
+
+                <div class="add-members">
+                    <a href="/projects/members?project_id=<?=$project['id']?>">add members</a>
+                </div>
+             <div class="members">
+                 <h1>Members</h1>
+                 <div class="member-list">
+                 <?php foreach ($members as $member): ?>
+                    <p> <?= $member->username ?></p>
+                 <?php endforeach; ?>
+             </div>
+            </div>
+            </div>
+
         <?php endforeach; ?>
-    </div>
 </div>
 
 

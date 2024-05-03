@@ -13,3 +13,4 @@ class Projects extends Model
 
     public $owner_id;
 }
+

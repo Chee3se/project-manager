@@ -28,4 +28,14 @@ function drop(ev, status) {
         xhr.send("id=" + id + "&status=" + status);
     }
 }
-
+function myFunction() {
+    var x;
+    var r = confirm("Press OK or Cancel button");
+    if (r == true) {
+        x = "You pressed OK!";
+    }
+    else {
+        x = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innerHTML = x;
+}

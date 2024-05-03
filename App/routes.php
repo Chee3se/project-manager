@@ -7,6 +7,7 @@ use Controllers\ProjectsController;
 use Controllers\SessionController;
 use Controllers\UserController;
 use Controllers\TaskController;
+use Controllers\ScheduleController;
 
 // Routes
 
@@ -19,10 +20,18 @@ $router->post('/tasks', [TaskController::class, 'store'])->middleware('auth');
 $router->delete('/tasks/{id}', [TaskController::class, 'destroy'])->middleware('auth');
 $router->get('/tasks/edit/{id}', [TaskController::class, 'edit'])->middleware('auth');
 $router->patch('/tasks', [TaskController::class, 'update'])->middleware('auth');
+
 //Projects
 $router->get('/projects', [ProjectsController::class, 'index'])->middleware('auth');
 $router->get('/projects/create', [ProjectsController::class, 'create'])->middleware('auth');
 $router->post('/projects', [ProjectsController::class, 'store'])->middleware('auth');
+$router->get('/projects/members', [ProjectsController::class, 'add'])->middleware('auth');
+$router->post('/projects/members', [ProjectsController::class, 'members'])->middleware('auth');
+
+
+// Schedule
+$router->get('/schedule', [ScheduleController::class, 'index'])->middleware('auth');
+
 // Login
 $router->get('/login', [SessionController::class, 'create'])->middleware('guest');
 $router->post('/login', [SessionController::class, 'store'])->middleware('guest');
