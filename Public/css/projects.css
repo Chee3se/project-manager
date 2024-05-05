@@ -31,7 +31,7 @@
     transition: 0.7s;
 }
 .p_type{
-    height: 40vh;
+    height: 100%;
     width: 60vw;
     display: grid;
     place-items: center;
@@ -55,6 +55,8 @@ a{
 
 .members{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 .members>h1{
@@ -63,4 +65,45 @@ a{
 
 .members>p{
     font-size: 15px;
+}
+
+.add-members {
+    width: 60px;
+    height: 20px;
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    border-radius: 10vw;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--formInputBackground);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-members>a {
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--textColor);
+    transition: all .5s;
+}
+
+.member_delete{
+    border: none;
+    height: 5px;
+    padding: 20px;
+}
+
+.member>button{
+    background-color: var(--formBorder); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10vw;
+    padding: 10px;
 }

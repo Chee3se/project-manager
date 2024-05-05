@@ -93,4 +93,35 @@ abstract class Model
         $db = static::$connection;
         $db->delete(static::$table, $this->id);
     }
+    public static function leftJoin($table, $condition, $params = [])
+    {
+        if (!self::$connection) {
+            self::$connection = App::resolve(Database::class);
+        }
+
+        $db = self::$connection;
+        $columns = $params['columns'] ?? '*';
+
+        $sql = "SELECT $columns FROM ".static::$table." LEFT JOIN $table ON $condition";
+
+        if (!empty($params['where'])) {
+            $sql .= " WHERE ".$params['where'];
+        }
+
+        if (!empty($params['orderBy'])) {
+            $sql .= " ORDER BY ".$params['orderBy'];
+        }
+
+        if (!empty($params['limit'])) {
+            $sql .= " LIMIT ".$params['limit'];
+        }
+
+        $data = $db->query($sql, $params['bindings'] ?? [])->fetchAll();
+
+        if (!$data) {
+            return false;
+        }
+
+        return $data;
+    }
 }

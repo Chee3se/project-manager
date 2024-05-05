@@ -9,11 +9,9 @@
         <?php foreach ($users as $user) : ?>
         <?php if($user['id'] != $_SESSION['id']){?>
 
-
-
         <div>
-            <input type="checkbox" value="<?=$user['id']?>" name="id" >
-            <label for="id"><?= $user['username'] ?></label>
+            <input type="checkbox" value="<?=$user['id']?>" name="members[]" >
+            <label for="members[]"><?= $user['username'] ?></label>
         </div>
 
         <?php } ?>

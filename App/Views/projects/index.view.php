@@ -15,15 +15,25 @@
             </a>
 
                 <div class="add-members">
-                    <a href="/projects/members?project_id=<?=$project['id']?>">add members</a>
+                    <a href="/projects/members?project_id=<?=$project['id']?>">Add</a>
                 </div>
              <div class="members">
                  <h1>Members</h1>
                  <div class="member-list">
-                 <?php foreach ($members as $member): ?>
-                    <p> <?= $member->username ?></p>
-                 <?php endforeach; ?>
-             </div>
+
+                     <?php foreach ($members as $member): ?>
+
+                         <form class="member_delete" method="post" action="/projects">
+                             <input type="hidden" name="id" value="<?= $member->id ?>" />
+                             <input type="hidden" name="_method" value="DELETE" />
+                             <div class="member">
+                                 <button><?= $member->username ?></button>
+                             </div>
+                         </form>
+
+                     <?php endforeach; ?>
+
+                 </div>
             </div>
             </div>
 
