@@ -9,8 +9,8 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (username, password, email)
-VALUES ('admin', '$2y$10$3iOJb95ihl.2PhkmacrKAeMJE/1PTJ3fhhGNuk5XG5NMAIHVOR1zC', 'admin@example.com')
-       ('eaterz', '$2y$10$.g67nVYbhREPueXDBGKPweCKjAmPd2KlV7525ZtZkankFIp85o.Xq', 'muraskoruslans@gmail.com')
+VALUES ('admin', '$2y$10$3iOJb95ihl.2PhkmacrKAeMJE/1PTJ3fhhGNuk5XG5NMAIHVOR1zC', 'admin@example.com'),
+       ('eaterz', '$2y$10$.g67nVYbhREPueXDBGKPweCKjAmPd2KlV7525ZtZkankFIp85o.Xq', 'muraskoruslans@gmail.com'),
        ('pakala', '$2y$10$pEsfy3fSV48qG0amkA2ST..uizEPBflx4CuQ281jJF/0X9tiT4IKe', 'muraskoruslans@gmail.com');
 /* password: root123 */
 /* eaterz password: rusis123 */

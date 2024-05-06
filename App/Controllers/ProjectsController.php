@@ -17,16 +17,28 @@ class ProjectsController
         //members sort
         $projects = Projects::where('owner_id', $_SESSION['id'],true);
         $projects_users = Projects_users::all();
-        $members = [];
-        if ($projects_users){
-            foreach ($projects as $project) {
 
+        // If the user is not an owner find the projects that the user is a member of
+        $user_in_projects = Projects_users::where('user_id', $_SESSION['id'],true);
+        if ($user_in_projects) {
+            foreach ($user_in_projects as $entry) {
+                $project = Projects::where('id', $entry['project_id'], true);
+                if (!$project) {continue;}
+                $projects[] = $project[0];
+            }
+        }
+
+        $members = [];
+        if ($projects && $projects_users){
+            foreach ($projects as $project) {
                 foreach ($projects_users as $projects_user) {
+
                     if($project['id'] == $projects_user['project_id']){
                     $user = User::find($projects_user['user_id']);
                             $members[] = $user;
 
                     }
+
                 }
             }
         }
@@ -35,8 +47,6 @@ class ProjectsController
             'page_title' => 'My projects',
             'projects' => $projects,
             'members' => $members,
-            'projects_users' => $projects_users
-
         ]);
     }
     public function create()
