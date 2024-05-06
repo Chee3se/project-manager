@@ -15,7 +15,6 @@ class ProjectsController
     {
 
         //members sort
-        $projects = Projects::where('owner_id', $_SESSION['id'],true);
         $projects_users = Projects_users::all();
 
         // If the user is not an owner find the projects that the user is a member of
@@ -32,13 +31,10 @@ class ProjectsController
         if ($projects && $projects_users){
             foreach ($projects as $project) {
                 foreach ($projects_users as $projects_user) {
-
                     if($project['id'] == $projects_user['project_id']){
                     $user = User::find($projects_user['user_id']);
-                            $members[] = $user;
-
+                            $members[$project['id']][] = $user;
                     }
-
                 }
             }
         }
@@ -61,11 +57,17 @@ class ProjectsController
         $request->validate([
             'name' => 'required'
         ]);
-        $projects = new Projects();
-        $projects->name = $request->input('name');
+        $project = new Projects();
+        $project->name = $request->input('name');
         $user = User::where('username', $_SESSION['user']);
-        $projects->owner_id = $user->id;
-        $projects->save();
+        $project->owner_id = $user->id;
+        $project->save();
+
+        // Create a new instance of Projects_users
+        $projects_users = new Projects_users();
+        $projects_users->project_id = $project->id;
+        $projects_users->user_id = $user->id;
+        $projects_users->save();
 
         redirect('/projects');
     }

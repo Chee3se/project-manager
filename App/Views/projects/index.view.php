@@ -21,7 +21,7 @@
                  <h1>Members</h1>
                  <div class="member-list">
 
-                     <?php foreach ($members as $member): ?>
+                     <?php foreach ($members[$project['id']] as $member): ?>
 
                          <form class="member_delete" method="post" action="/projects">
                              <input type="hidden" name="id" value="<?= $member->id ?>" />

@@ -39,7 +39,7 @@ class Database
         );
     }
 
-    public function insert($table, $data): void
+    public function insert($table, $data): int
     {
         $fields = array_keys($data);
         $values = array_values($data);
@@ -50,6 +50,7 @@ class Database
             "INSERT INTO $table (".implode(',', $fields).") VALUES (".implode(',', $placeholders).")",
             array_combine($placeholders, $values)
         );
+        return $this->connection->lastInsertId();
     }
 
     public function update($table, $id, $data): void

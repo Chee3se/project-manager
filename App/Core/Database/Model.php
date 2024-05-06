@@ -84,7 +84,8 @@ abstract class Model
         if ($this->id) {
             $db->update(static::$table, $this->id, $data);
         } else {
-            $db->insert(static::$table, $data);
+            // Return the new id once it is created
+            $this->id = $db->insert(static::$table, $data);
         }
     }
 
