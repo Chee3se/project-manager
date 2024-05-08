@@ -32,7 +32,7 @@ class SessionController
 
         $request->error('username', 'Invalid username or password');
 
-        Session::put('project_id',);
+        Session::put('project_id');
     }
     public function destroy()
     {
