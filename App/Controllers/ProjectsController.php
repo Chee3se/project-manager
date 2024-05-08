@@ -13,7 +13,7 @@ class ProjectsController
 
     public function index()
     {
-
+        $projects = [];
         //members sort
         $projects_users = Projects_users::all();
 
@@ -27,6 +27,8 @@ class ProjectsController
             }
         }
 
+
+
         $members = [];
         if ($projects && $projects_users){
             foreach ($projects as $project) {
@@ -37,8 +39,9 @@ class ProjectsController
                     }
                 }
             }
-        }
 
+
+        }
         view('projects/index', [
             'page_title' => 'My projects',
             'projects' => $projects,
@@ -103,8 +106,14 @@ class ProjectsController
 
     public function destroy($id)
     {
-
         $project_users=Projects_users::where('user_id',$id);
+        $projects =Projects::where('id',$id);
+
+        if($projects){
+
+            Projects_users::where('project_id', $id)->delete();
+            $projects->delete();
+        }
 
         if($project_users){
             $project_users->delete();
