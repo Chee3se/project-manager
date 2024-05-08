@@ -125,7 +125,19 @@ class ProjectsController
             $project->delete();
         }
 
+
+
         redirect('/projects');
     }
+
+    public function leave($id){
+        $user = Projects_users::where('user_id',$id);
+        $user->delete();
+
+
+        redirect('/projects');
+    }
+
+
 
 }

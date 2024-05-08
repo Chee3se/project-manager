@@ -4,6 +4,7 @@
 
 use Controllers\HomeController;
 use Controllers\ProjectsController;
+use Controllers\ProjectsUsersController;
 use Controllers\SessionController;
 use Controllers\UserController;
 use Controllers\TaskController;
@@ -28,6 +29,7 @@ $router->post('/projects', [ProjectsController::class, 'store'])->middleware('au
 $router->get('/projects/members', [ProjectsController::class, 'add'])->middleware('auth');
 $router->post('/projects/members', [ProjectsController::class, 'members'])->middleware('auth');
 $router->delete('/projects/{id}', [ProjectsController::class, 'destroy'])->middleware('auth');
+$router->delete('/projects/members/{id}', [ProjectsController::class, 'leave'])->middleware('auth');
 
 
 // Schedule

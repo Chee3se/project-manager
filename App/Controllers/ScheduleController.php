@@ -10,8 +10,12 @@ use Models\User;
 class ScheduleController
 {
     public function index(){
-        view('schedule/index', [
-            'page_title' => 'Calendar'
+
+        view('projects/index', [
+            'page_title' => 'My projects',
+
         ]);
     }
+
+
 }

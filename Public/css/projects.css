@@ -33,11 +33,11 @@
 .p_type{
     height: 100%;
     width: 60vw;
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(2, 1fr 1fr);
-    gap: 3rem;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 18vh;
     background: var(--buttonBackgroundColor);
     border: solid 1px var(--formBorder);
     border-radius: 10px;
@@ -68,16 +68,20 @@ a{
 }
 
 .add-members {
-    width: 60px;
-    height: 20px;
-    padding: 20px;
-    margin: 10px 0;
     display: flex;
-    border-radius: 10vw;
     justify-content: center;
     align-items: center;
-    background-color: var(--formInputBackground);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 2vh;
+    width: 5vw;
+    background-color: var(--formBorder); /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10vw;
 }
 
 .add-members>a {
@@ -88,22 +92,33 @@ a{
 }
 
 .member_delete{
-    border: none;
-    height: 5px;
-    padding: 20px;
+    height: 0;
+    border:none;
+    background:none;
+
 }
 
 .member>button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 6vw;
     background-color: var(--formBorder); /* Green */
     border: none;
     color: white;
     padding: 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    margin: 5px;
     cursor: pointer;
     border-radius: 10vw;
+    font-size: 20px;
+}
 
+.action_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
