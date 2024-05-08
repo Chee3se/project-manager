@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c6a7b9c-3ee2-4d15-87ac-05961178c8d8" name="Changes" comment="Calendar">
+      <change afterPath="$PROJECT_DIR$/Public/css/calendar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/ProjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/ProjectsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/schedule/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/schedule/index.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +18,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,6 +59,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,7 +86,7 @@
       <workItem from="1713936578714" duration="4018000" />
       <workItem from="1714113866391" duration="3964000" />
       <workItem from="1715146155682" duration="3213000" />
-      <workItem from="1715149376634" duration="1530000" />
+      <workItem from="1715149376634" duration="2950000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed deleting project">
       <option name="closed" value="true" />
@@ -100,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715150806282</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Calendar">
+      <option name="closed" value="true" />
+      <created>1715150950154</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715150950154</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

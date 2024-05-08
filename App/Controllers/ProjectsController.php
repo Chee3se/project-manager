@@ -29,7 +29,7 @@ class ProjectsController
         }
 
 
-
+        // Get the members of each project
         $members = [];
         if ($projects && $projects_users){
             foreach ($projects as $project) {
