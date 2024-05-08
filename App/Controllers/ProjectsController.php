@@ -5,6 +5,7 @@ use Cassandra\Date;
 use Core\Http\Request;
 use Models\Projects;
 use Models\Projects_users;
+use Models\Task;
 use Models\User;
 use Core\Session\Session;
 
@@ -106,17 +107,22 @@ class ProjectsController
 
     public function destroy($id)
     {
-        $project_users=Projects_users::where('user_id',$id);
-        $projects =Projects::where('id',$id);
+        $project =Projects::find($id);
 
-        if($projects){
+        if($project){
+            // Delete recursive
+            // Delete the users associated with the project
+            $users = Projects_users::where('project_id', $id, true);
+            foreach ($users as $user) {
+                Projects_users::find($user["id"])->delete();
+            }
+            // Delete the tasks associated with the project
+            $tasks = Task::where('project_id', $id, true);
+            foreach ($tasks as $task) {
+                Task::find($task["id"])->delete();
+            }
 
-            Projects_users::where('project_id', $id)->delete();
-            $projects->delete();
-        }
-
-        if($project_users){
-            $project_users->delete();
+            $project->delete();
         }
 
         redirect('/projects');
