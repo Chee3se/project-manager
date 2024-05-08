@@ -1,0 +1,59 @@
+/* Calendar */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid var(--formBorder);
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+table th {
+    font-weight: 700;
+    background-color: var(--buttonBackgroundColor);
+    color: var(--textColor);
+}
+
+table td {
+    background-color: var(--formInputBackground);
+    color: var(--formPlaceholder);
+}
+
+table a {
+    color: var(--textColor);
+    text-decoration: none;
+}
+
+table a:hover {
+    color: var(--hoverColor);
+}
+
+/* Calendar navigation */
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.calendar-nav a {
+    color: var(--textColor);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: background-color .3s;
+}
+
+.calendar-nav a:hover {
+    background-color: var(--buttonBackgroundColor);
+    color: var(--hoverColor);
+}

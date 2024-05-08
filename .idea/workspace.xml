@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b705f6d3-deeb-4102-8f25-f8292128d241" name="Changes" comment="add members 'nestrada lidz galam'">
+    <list default="true" id="9c6a7b9c-3ee2-4d15-87ac-05961178c8d8" name="Changes" comment="Fixed deleting project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/ProjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/ProjectsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/ScheduleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/ScheduleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/projects/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/projects/index.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/schedule/index.view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/schedule/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/schedule/index.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/projects.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,32 +17,19 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;eaterz&quot;
+    &quot;assignee&quot;: &quot;Chee3se&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="dcad9892-d819-4bc5-829f-ccc35845b945" />
+        <option name="accountId" value="b90b94c5-df6d-42e5-a5dc-d41f45c9eca5" />
         <option name="url" value="https://github.com/Chee3se/project-manager.git" />
       </UrlAndAccount>
     </option>
@@ -55,231 +37,64 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files (x86)\php-8.3.0-nts-Win32-vs16-x64\php.exe" />
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="2ezPaE1i6hBIFkJgjf8LCzbZRax" />
+  <component name="ProjectId" id="2fX9VGjeke8VoUPd8mrYNEMZgRK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/muras/PhpstormProjects/football_market&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14808.18" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14015.96" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b705f6d3-deeb-4102-8f25-f8292128d241" name="Changes" comment="" />
-      <created>1712904495581</created>
+      <changelist id="9c6a7b9c-3ee2-4d15-87ac-05961178c8d8" name="Changes" comment="" />
+      <created>1713936577640</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1712904495581</updated>
-      <workItem from="1712904498019" duration="4198000" />
-      <workItem from="1713173668273" duration="4655000" />
-      <workItem from="1713251618669" duration="324000" />
-      <workItem from="1713251958880" duration="34000" />
-      <workItem from="1713251999530" duration="11036000" />
-      <workItem from="1713266740808" duration="146000" />
-      <workItem from="1713296010014" duration="101000" />
-      <workItem from="1713420549948" duration="340000" />
-      <workItem from="1713423733429" duration="790000" />
-      <workItem from="1713427567944" duration="56000" />
-      <workItem from="1713508878005" duration="3544000" />
-      <workItem from="1713726902043" duration="1896000" />
-      <workItem from="1713867019866" duration="19000" />
-      <workItem from="1713870179313" duration="1130000" />
-      <workItem from="1713936900728" duration="4334000" />
-      <workItem from="1714041861417" duration="21000" />
-      <workItem from="1714044200470" duration="23000" />
-      <workItem from="1714044316322" duration="20000" />
-      <workItem from="1714044369203" duration="28000" />
-      <workItem from="1714044677111" duration="503000" />
-      <workItem from="1714109162186" duration="15000" />
-      <workItem from="1714109254310" duration="638000" />
-      <workItem from="1714113945057" duration="4364000" />
-      <workItem from="1714376731618" duration="6768000" />
-      <workItem from="1714459966558" duration="3630000" />
-      <workItem from="1714469775643" duration="20000" />
-      <workItem from="1714470278188" duration="94000" />
-      <workItem from="1714471156265" duration="14000" />
-      <workItem from="1714471391208" duration="6000" />
-      <workItem from="1714631481425" duration="11510000" />
-      <workItem from="1714723084769" duration="7846000" />
-      <workItem from="1714731029436" duration="4000" />
-      <workItem from="1714734879248" duration="218000" />
-      <workItem from="1714913253278" duration="12982000" />
-      <workItem from="1714981016710" duration="25000" />
-      <workItem from="1714984887668" duration="10000" />
-      <workItem from="1714984986649" duration="651000" />
-      <workItem from="1714994388336" duration="641000" />
-      <workItem from="1715079818746" duration="4649000" />
-      <workItem from="1715146299539" duration="2163000" />
+      <updated>1713936577640</updated>
+      <workItem from="1713936578714" duration="4018000" />
+      <workItem from="1714113866391" duration="3964000" />
+      <workItem from="1715146155682" duration="3213000" />
+      <workItem from="1715149376634" duration="1404000" />
     </task>
-    <task id="LOCAL-00001" summary="esmu labaks programmetjas neka emīls petersons">
+    <task id="LOCAL-00001" summary="Fixed deleting project">
       <option name="closed" value="true" />
-      <created>1712908618491</created>
+      <created>1715149055989</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1712908618491</updated>
+      <updated>1715149055989</updated>
     </task>
-    <task id="LOCAL-00002" summary="esmu labaks programmetjas neka emīls petersons">
+    <task id="LOCAL-00002" summary="Fixed deleting project">
       <option name="closed" value="true" />
-      <created>1713176556828</created>
+      <created>1715149435934</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1713176556828</updated>
+      <updated>1715149435934</updated>
     </task>
-    <task id="LOCAL-00003" summary="esmu labaks programmetjas neka emīls petersons">
-      <option name="closed" value="true" />
-      <created>1713178225212</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1713178225212</updated>
-    </task>
-    <task id="LOCAL-00004" summary="esmu labaks programmetjas neka emīls petersons">
-      <option name="closed" value="true" />
-      <created>1713178263860</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1713178263860</updated>
-    </task>
-    <task id="LOCAL-00005" summary="esmu labaks programmetjas neka emīls petersons">
-      <option name="closed" value="true" />
-      <created>1713255092162</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1713255092162</updated>
-    </task>
-    <task id="LOCAL-00006" summary="esmu labaks programmetjas neka emīls petersons">
-      <option name="closed" value="true" />
-      <created>1713266664349</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1713266664349</updated>
-    </task>
-    <task id="LOCAL-00007" summary="esmu labaks programmetjas neka emīls petersons">
-      <option name="closed" value="true" />
-      <created>1713266692600</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1713266692600</updated>
-    </task>
-    <task id="LOCAL-00008" summary="esmu labaks programmetjas neka emīls petersons">
-      <option name="closed" value="true" />
-      <created>1713513522661</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1713513522661</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Project page style">
-      <option name="closed" value="true" />
-      <created>1713728798859</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1713728798859</updated>
-    </task>
-    <task id="LOCAL-00010" summary="tasks find project id">
-      <option name="closed" value="true" />
-      <created>1713941250671</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1713941250671</updated>
-    </task>
-    <task id="LOCAL-00011" summary="edit">
-      <option name="closed" value="true" />
-      <created>1714118295142</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1714118295142</updated>
-    </task>
-    <task id="LOCAL-00012" summary="delete button for tasks">
-      <option name="closed" value="true" />
-      <created>1714383293694</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1714383293694</updated>
-    </task>
-    <task id="LOCAL-00013" summary="delete button for tasks">
-      <option name="closed" value="true" />
-      <created>1714383494962</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1714383494962</updated>
-    </task>
-    <task id="LOCAL-00014" summary="delete button for tasks">
-      <option name="closed" value="true" />
-      <created>1714383508456</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1714383508456</updated>
-    </task>
-    <task id="LOCAL-00015" summary="add members 'nestrada lidz galam'">
-      <option name="closed" value="true" />
-      <created>1714730973685</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1714730973685</updated>
-    </task>
-    <task id="LOCAL-00016" summary="add members 'nestrada lidz galam'">
-      <option name="closed" value="true" />
-      <created>1714926129424</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1714926129424</updated>
-    </task>
-    <task id="LOCAL-00017" summary="add members 'nestrada lidz galam'">
-      <option name="closed" value="true" />
-      <created>1715146330773</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1715146330773</updated>
-    </task>
-    <task id="LOCAL-00018" summary="add members 'nestrada lidz galam'">
-      <option name="closed" value="true" />
-      <created>1715146994368</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1715146994368</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,36 +105,14 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="esmu labaks programmetjas neka emīls petersons" />
-    <MESSAGE value="Project page style" />
-    <MESSAGE value="tasks find project id" />
-    <MESSAGE value="edit" />
-    <MESSAGE value="delete button for tasks" />
-    <MESSAGE value="add members 'nestrada lidz galam'" />
-    <option name="LAST_COMMIT_MESSAGE" value="add members 'nestrada lidz galam'" />
+    <MESSAGE value="Fixed deleting project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed deleting project" />
   </component>
 </project>
