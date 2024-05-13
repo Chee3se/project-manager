@@ -78,15 +78,21 @@ class ProjectsController
     public function add(){
         Session::put('project_id',$_GET['project_id']??Session::get('project_id'));
         $users = User::all();
-
-
-
-
-            view('projects/members', [
-                'page_title' => 'Add members',
-                'users' => $users,
-            ]);
+        // Remove those who are already members
+        $projects_users = Projects_users::where('project_id',Session::get('project_id'),true);
+        $members = [];
+        foreach ($projects_users as $projects_user){
+            $members[] = $projects_user['user_id'];
         }
+        $users = array_filter($users, function($user) use ($members){
+            return !in_array($user['id'], $members);
+        });
+
+        view('projects/members', [
+            'page_title' => 'Add members',
+            'users' => $users,
+        ]);
+    }
 
 
 
