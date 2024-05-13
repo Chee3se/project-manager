@@ -95,6 +95,8 @@ class ProjectsController
         $members = $_POST['members'];
 
         foreach ($members as $member){
+            // Skip adding if already added
+            if (Projects_users::find($member)) {continue;}
 
             $projects_user= new Projects_users();
             $projects_user->project_id = Session::get('project_id');
@@ -103,6 +105,10 @@ class ProjectsController
         }
 
         redirect('/projects');
+    }
+
+    public function delete_member() {
+
     }
 
     public function destroy($id)
