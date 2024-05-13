@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9c6a7b9c-3ee2-4d15-87ac-05961178c8d8" name="Changes" comment="Calendar styles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/ProjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/ProjectsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/ScheduleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/ScheduleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +44,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files (x86)\php-8.3.0-nts-Win32-vs16-x64\php.exe" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -69,7 +70,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14015.96" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14808.18" />
       </set>
     </attachedChunks>
   </component>
@@ -86,6 +87,7 @@
       <workItem from="1715146155682" duration="3213000" />
       <workItem from="1715149376634" duration="4745000" />
       <workItem from="1715590134851" duration="2596000" />
+      <workItem from="1715598586133" duration="173000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed deleting project">
       <option name="closed" value="true" />

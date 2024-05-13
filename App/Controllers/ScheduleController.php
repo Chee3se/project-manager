@@ -11,8 +11,8 @@ class ScheduleController
 {
     public function index(){
 
-        view('projects/index', [
-            'page_title' => 'My projects',
+        view('schedule/index', [
+            'page_title' => 'Calendar',
 
         ]);
     }
