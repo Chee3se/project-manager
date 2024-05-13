@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c6a7b9c-3ee2-4d15-87ac-05961178c8d8" name="Changes" comment="Calendar styles">
-      <change afterPath="$PROJECT_DIR$/Public/images/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/images/menu.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/components/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/components/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/tasks/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/tasks/index.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/tasks.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/tasks.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/css/navbar-session.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/navbar-session.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +69,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14808.18" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.15026.12" />
       </set>
     </attachedChunks>
   </component>
@@ -93,6 +87,7 @@
       <workItem from="1715149376634" duration="4745000" />
       <workItem from="1715590134851" duration="2596000" />
       <workItem from="1715598586133" duration="173000" />
+      <workItem from="1715627716557" duration="3619000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed deleting project">
       <option name="closed" value="true" />
