@@ -1,3 +1,5 @@
+<header>
+<input type="checkbox"/>
 <nav>
     <div class="navbar-container">
         <div class="navbar-left">
@@ -28,4 +30,7 @@
         <?php endif; ?>
     </div>
 </nav>
+<img class="icons menu" src="/images/menu.svg" alt="Menu">
+<img class="icons close" src="/images/close.svg" alt="Close">
+</header>
 <main>

@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: row;
     padding-top: 20vh;
+    height: 50vh;
     gap: 10px;
 
 }
@@ -116,6 +117,8 @@
     transition: 0.7s;
 }
 
+/* Mobile support */
+
 @media (max-width: 600px) {
 
     .container {
@@ -226,5 +229,51 @@
     .delete:hover {
         border-color: #ffdd00;
         transition: 0.7s;
+    }
+
+    input[type="checkbox"] {
+        display: block;
+        opacity: 0;
+    }
+    a.text {
+        display: none;
+    }
+    nav>a {
+        background-color: rgb(70, 70, 70);
+        z-index: 8;
+        display: none;
+        width: 100%;
+        height: 40px;
+    }
+    nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px;
+    }
+    .icons {
+        transition: all 1s ease;
+    }
+    .menu {
+        display: block;
+    }
+    .close {
+        opacity: 0;
+        display: block;
+    }
+    header input:checked ~ .menu{
+        transform: scale(0.5) rotate(360deg);
+        transition-duration: 1s;
+        opacity: 0;
+    }
+    header input:checked ~ .close{
+        transform: scale(1) rotate(360deg);
+        transition-duration: 1s;
+        opacity: 1;
+    }
+    header input:checked ~ nav>a {
+        display: inline-block;
+    }
+    header input:checked ~ nav>a.text {
+        display: none;
     }
 }

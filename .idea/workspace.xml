@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c6a7b9c-3ee2-4d15-87ac-05961178c8d8" name="Changes" comment="Calendar styles">
+      <change afterPath="$PROJECT_DIR$/Public/images/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/images/menu.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/home/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/home/index.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/projects/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/projects/index.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/navbar-session.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/navbar-session.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/projects.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/components/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/components/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/tasks/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/tasks/index.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/css/tasks.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/tasks.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +92,7 @@
       <workItem from="1715146155682" duration="3213000" />
       <workItem from="1715149376634" duration="4745000" />
       <workItem from="1715590134851" duration="2596000" />
-      <workItem from="1715598586133" duration="3528000" />
-      <workItem from="1715602386027" duration="3216000" />
+      <workItem from="1715598586133" duration="173000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed deleting project">
       <option name="closed" value="true" />
@@ -134,23 +134,7 @@
       <option name="project" value="LOCAL" />
       <updated>1715153374476</updated>
     </task>
-    <task id="LOCAL-00006" summary="Calendar styles">
-      <option name="closed" value="true" />
-      <created>1715598805554</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1715598805554</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Calendar styles">
-      <option name="closed" value="true" />
-      <created>1715599253095</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1715599253095</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

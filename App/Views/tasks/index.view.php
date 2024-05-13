@@ -28,8 +28,6 @@
                         <p><?= $task['due_date'] ?></p>
                     </div>
                 </a>
-
-
         <?php }?>
         <?php endforeach; ?>
     </div>
