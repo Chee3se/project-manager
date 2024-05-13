@@ -26,7 +26,11 @@ $firstDayOfMonth = date('N', mktime(0,0,0, $month, 1, $year));
 
     <div style="display: flex; justify-content: space-between;">
         <a href="?month=<?= $prev_month ?>&year=<?= $prev_year ?>">&larr;</a>
-        <h2><?= date('F', mktime(0, 0, 0, $month, 10)) ?></h2>
+        <h2>
+            <?= date('F', mktime(0, 0, 0, $month, 10)) ?>
+            <?= $year ?>
+        </h2>
+
         <a href="?month=<?= $next_month ?>&year=<?= $next_year ?>">&rarr;</a>
     </div>
 
