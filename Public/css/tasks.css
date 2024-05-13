@@ -115,3 +115,116 @@
     border-color: #ffdd00;
     transition: 0.7s;
 }
+
+@media (max-width: 600px) {
+
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column; /* Change flex-direction to column for mobile */
+        padding-top: 10vh; /* Adjust padding for smaller screens */
+        gap: 10px;
+    }
+
+    .task {
+        width: 60vw; /* Adjust width for better fit on small screens */
+        height: auto; /* Allow height to adjust based on content */
+        padding: 20px;
+        margin: 10px auto; /* Center the tasks */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--formInputBackground);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        cursor: pointer;
+        border-style: solid;
+        border-color: var(--formInputBackground);
+        transition: 0.7s;
+    }
+
+    .task:hover {
+        border-color: #ffdd00;
+        transition: 0.7s;
+    }
+
+    .create-task {
+        width: 50px;
+        height: 50px;
+        padding: 20px;
+        margin: 10px auto; /* Center the create task button */
+        display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--buttonBackgroundColor);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .create-task>a {
+        font-size: 40px; /* Adjust font size for smaller screens */
+        text-decoration: none;
+        color: var(--textColor);
+        transition: all .5s;
+    }
+
+    .column {
+        flex: 1;
+        padding: 10px;
+        height: auto; /* Allow height to adjust based on content */
+        position: relative;
+    }
+
+    .column:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: #ffffff; /* Line color */
+    }
+
+    .task_type {
+        height: auto; /* Allow height to adjust based on content */
+        display: grid;
+        justify-content: center;
+        width: 80vw; /* Adjust width for better fit on small screens */
+        background: var(--buttonBackgroundColor);
+        border: solid 1px var(--formBorder);
+        border-radius: 10px;
+        padding: 0 6px 40px 6px;
+    }
+
+    .task>h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task>p {
+        font-size: 15px;
+        width: 80vw; /* Adjust width for better fit on small screens */
+        overflow-wrap: break-word;
+    }
+
+    .delete_form {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0 auto; /* Center the delete form */
+        text-align: center; /* Center the button inside */
+    }
+
+    .delete button {
+        background-color: var(--formInputBackground);
+        border: var(--formInputBackground);
+        color: white;
+    }
+
+    .delete:hover {
+        border-color: #ffdd00;
+        transition: 0.7s;
+    }
+}

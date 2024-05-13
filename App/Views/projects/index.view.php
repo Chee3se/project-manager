@@ -44,10 +44,6 @@
 
                  </div>
             </div>
-<!--                <div class="edit">-->
-<!--                    <a class href="/tasks/edit?id=--><?php //=$project['id']?><!--">-->
-<!--                </div>-->
-<!--    delete of leave project            -->
                 <?php if($project['owner_id'] == $_SESSION['id']){?>
                 <div class="action_buttons">
                 <div class="add-members">
@@ -73,13 +69,11 @@
             </form>
         </div>
     <?php } ?>
-</div>
 
     <?php endforeach; ?>
     <?php } ?>
+
 </div>
-
-
 
 
 

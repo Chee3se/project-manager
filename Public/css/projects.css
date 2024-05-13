@@ -5,7 +5,7 @@
     flex-direction: column;
     padding-top: 5vh;
     gap: 10px;
-
+    margin-bottom: 3vh;
 }
 
 .project {
@@ -32,7 +32,7 @@
 }
 .p_type{
     height: 100%;
-    width: 60vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,3 +140,30 @@ a{
     align-items: center;
     flex-direction: column;
 }
+
+@media (max-width: 600px) {
+
+    .p_container{
+        gap: 20px;
+    }
+
+    .project{
+        width: 66vw; /* Adjust width for better fit on small screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .p_type{
+        flex-direction: column;
+        width: 80vw; /* Adjust width for better fit on small screens */
+    }
+
+    .add-members {
+        width: 66vw; /* Adjust width for better fit on small screens */
+        height: 2vh;
+    }
+
+    .member>button, .delete_project>button {
+        width: 70vw; /* Adjust width for better fit on small screens */
+    }
+}
+

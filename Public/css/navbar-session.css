@@ -71,3 +71,7 @@
     color: var(--goodRed);
     font-size: 20px;
 }
+
+@media (max-width: 600px) {
+
+}
