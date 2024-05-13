@@ -73,7 +73,7 @@ a{
     align-items: center;
     height: 2vh;
     width: 5vw;
-    background-color: var(--formBorder); /* Green */
+    background-color: green; /* Green */
     border: none;
     color: white;
     padding: 10px;
@@ -105,6 +105,24 @@ a{
     height: 5vh;
     width: 6vw;
     background-color: var(--formBorder); /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10vw;
+    font-size: 20px;
+}
+
+.delete_project>button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 6vw;
+    background-color: red; /* Green */
     border: none;
     color: white;
     padding: 10px;

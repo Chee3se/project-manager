@@ -29,8 +29,7 @@ $router->post('/projects', [ProjectsController::class, 'store'])->middleware('au
 $router->get('/projects/members', [ProjectsController::class, 'add'])->middleware('auth');
 $router->post('/projects/members', [ProjectsController::class, 'members'])->middleware('auth');
 $router->delete('/projects/{id}', [ProjectsController::class, 'destroy'])->middleware('auth');
-$router->delete('/projects/members/{id}', [ProjectsController::class, 'leave'])->middleware('auth');
-
+$router->delete('/projects/members/{id}', [ProjectsController::class, 'delete_member'])->middleware('auth');
 
 // Schedule
 $router->get('/schedule', [ScheduleController::class, 'index'])->middleware('auth');

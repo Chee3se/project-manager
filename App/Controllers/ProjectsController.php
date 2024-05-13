@@ -94,9 +94,19 @@ class ProjectsController
 
         $members = $_POST['members'];
 
+
+        $projects_users = Projects_users::where('project_id',Session::get('project_id'),true);
+
         foreach ($members as $member){
             // Skip adding if already added
-            if (Projects_users::find($member)) {continue;}
+            $found_user=false;
+            foreach ($projects_users as $user){
+
+                if($user['user_id'] == $member){
+                    $found_user=true;
+                }
+            }
+            if ($found_user) {continue;}
 
             $projects_user= new Projects_users();
             $projects_user->project_id = Session::get('project_id');
@@ -107,8 +117,16 @@ class ProjectsController
         redirect('/projects');
     }
 
-    public function delete_member() {
+    public function delete_member($id) {
+        // find project_user by user_id
+        $project_user = Projects_users::where('user_id',$id);
 
+        // if user exists, delete them.
+        if($project_user){
+            $project_user->delete();
+        }
+
+        redirect('/projects');
     }
 
     public function destroy($id)
@@ -136,13 +154,6 @@ class ProjectsController
         redirect('/projects');
     }
 
-    public function leave($id){
-        $user = Projects_users::where('user_id',$id);
-        $user->delete();
-
-
-        redirect('/projects');
-    }
 
 
 

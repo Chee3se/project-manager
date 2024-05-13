@@ -29,9 +29,15 @@
 
                      <?php foreach ($members[$project['id']] as $member): ?>
                         <?php if($member->id != $_SESSION['id']){ ?>
-                             <div class="member">
-                                 <button><?= $member->username ?></button>
-                             </div>
+
+                            <form class="member_delete" method="post" action="/projects/members">
+                                <input type="hidden" name="id" value="<?= $member->id ?>" />
+                                <input type="hidden" name="_method" value="DELETE" />
+                                <div class="member">
+                                    <button><?= $member->username ?></button>
+                                </div>
+                            </form>
+
 
                         <?php } ?>
                      <?php endforeach; ?>
@@ -41,17 +47,16 @@
 <!--                <div class="edit">-->
 <!--                    <a class href="/tasks/edit?id=--><?php //=$project['id']?><!--">-->
 <!--                </div>-->
-
+<!--    delete of leave project            -->
                 <?php if($project['owner_id'] == $_SESSION['id']){?>
                 <div class="action_buttons">
-
                 <div class="add-members">
                     <a href="/projects/members?project_id=<?=$project['id']?>">Add</a>
                 </div>
                 <form class="member_delete" method="post" action="/projects">
                     <input type="hidden" name="id" value="<?= $project['id'] ?>" />
                     <input type="hidden" name="_method" value="DELETE" />
-                    <div class="member">
+                    <div class="delete_project">
                         <button>Delete</button>
                     </div>
                 </form>
@@ -59,7 +64,7 @@
             </div>
             <?php }elseif ($project['owner_id'] != $_SESSION['id']){?>
         <div class="action_buttons">
-            <form class="member_delete" method="post" action="/projects/members">
+            <form class="member_delete" method="post" action="/projects">
                 <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>" />
                 <input type="hidden" name="_method" value="DELETE" />
                 <div class="member">
